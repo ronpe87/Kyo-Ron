@@ -1,0 +1,47 @@
+.header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  padding: 10px 16px;
+  background-color: white;
+
+  &_loginBtn {
+    border-radius: 8px;
+    font-size: 12px;
+    margin-top: 16px;
+  }
+
+  &_left {
+    display: flex;
+
+    img {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+    }
+  }
+
+  &_title {
+    margin: auto;
+    display: flex;
+  }
+
+  &_right {
+    display: flex;
+    border-radius: 100%;
+    text-align: right;
+
+    img {
+      height: 40px;
+      width: 40px;
+    }
+  }
+}
+
+.log_out {
+  text-align: center;
+}
