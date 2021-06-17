@@ -1,0 +1,36 @@
+.header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  padding: 10px 16px;
+  background-color: white;
+
+  &_loginBtn {
+    border-radius: 8px;
+    font-size: 12px;
+    margin-top: 16px;
+  }
+
+  &_title {
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+
+  &_right {
+    border-radius: 100%;
+    margin-right: 0px;
+
+    img {
+      height: 40px;
+      width: 40px;
+    }
+  }
+}
+
+.log_out {
+  text-align: center;
+}
