@@ -7,13 +7,10 @@
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
   %body
     - if !current_page?(new_user_session_path) && !current_page?(new_user_registration_path)
       %header.header
-        .header_left
-          - if !current_page?(root_path)
-            = link_to 'javascript:history.back()' do
-              = image_tag 'back.png'
         .header_title= content_for?(:title) ? yield(:title) : "Kyo-Ron"
         .header_right
           - if user_signed_in?

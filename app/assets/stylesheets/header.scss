@@ -15,25 +15,14 @@
     margin-top: 16px;
   }
 
-  &_left {
-    display: flex;
-
-    img {
-      width: 40px;
-      height: 40px;
-      cursor: pointer;
-    }
-  }
-
   &_title {
-    margin: auto;
-    display: flex;
+    margin-left: 0px;
+    margin-top: 10px;
   }
 
   &_right {
-    display: flex;
     border-radius: 100%;
-    text-align: right;
+    margin-right: 0px;
 
     img {
       height: 40px;
