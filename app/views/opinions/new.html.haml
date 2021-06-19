@@ -1,4 +1,7 @@
 .container
+  %ul
+    - @opinion.errors.full_messages.each do |message|
+      %li= message
   = form_with(model: @opinion, url: opinions_path, method: 'post', local: true) do |f|
     %div
       = f.label :title, 'タイトル'
