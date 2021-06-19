@@ -5,12 +5,15 @@ class OpinionsController < ApplicationController
     @opinions = Opinion.all
   end
 
+  def show
+  end
+
   def new
-    @opinion = Opinion.new
+    @opinion = current_user.opinions.build
   end
 
   def create
-    @opinion = Opinion.new(opinion_params)
+    @opinion = current_user.opinions.build(opinion_params)
     if @opinion.save
       redirect_to opinion_path(@opinion), notice: '保存できました'
     else
