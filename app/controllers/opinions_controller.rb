@@ -6,5 +6,6 @@ class OpinionsController < ApplicationController
   end
 
   def new
+    @opinion = Opinion.new
   end
 end
