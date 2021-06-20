@@ -1,10 +1,11 @@
 = link_to opinion_path(opinion) do
   .card
+    .card_title
+      = opinion.title
     .card_content
-      .card_title
-        = opinion.title
-      .card_detail
-        = opinion.content
-        %div
-          %p= opinion.author_name
-          %p= opinion.display_created_at
+      = opinion.content
+    .card_detail
+      .card_detail_author
+        %p= opinion.author_name
+      .card_detail_created
+        %p= opinion.display_created_at

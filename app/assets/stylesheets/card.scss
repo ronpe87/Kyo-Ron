@@ -1,7 +1,7 @@
 .card {
   position: relative;
-  margin-bottom: 26px;
-  height: 185px;
+  margin-bottom: 24px;
+  height: 184px;
   background: #F4F4F4;
   border-radius: 10px;
   font-family: Avenir;
@@ -10,13 +10,12 @@
 
   &_title {
     position: absolute;
-    width: 240px;
-    height: 25px;
-    left: 17px;
+    height: 24px;
+    left: 16px;
     top: 32px;
 
-    font-size: 18px;
-    line-height: 25px;
+    font-size: 24px;
+    line-height: 24px;
     color: #000000;
     word-wrap: break-word;
     overflow: hidden;
@@ -24,14 +23,13 @@
     text-overflow: ellipsis;
   }
 
-  &_detail {
+  &_content {
     position: absolute;
-    padding: 6px 17px;
-    top: 63px;
-    position: relative;
+    padding: 8px 16px;
+    top: 64px;
 
-    font-size: 14px;
-    line-height: 19px;
+    font-size: 16px;
+    line-height: 16px;
     word-wrap: break-word;
     overflow: hidden;
     white-space: nowrap;
@@ -39,16 +37,22 @@
     color: #000000;
 
     mix-blend-mode: normal;
-    opacity: 0.4;
-    &_actions {
-      right: 0px;
-      position: absolute;
-    }
+    opacity: 0.5;
   }
 
-  &_author {
+  &_detail {
     position: absolute;
-    top: 111px;
-    left: 20px;
+    padding: 0px 16px;
+    right: 0px;
+    bottom: 0px;
+    font-size: 16px;
+    line-height: 16px;
+    color: blue;
+    opacity: 0.5;
+    display: flex;
+
+    &_author {
+      margin-right: 8px;
+    }
   }
 }
