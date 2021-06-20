@@ -1,4 +1,5 @@
 class OpinionsController < ApplicationController
+  before_action :set_opinion, only: [:show]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
@@ -24,5 +25,9 @@ class OpinionsController < ApplicationController
   private
   def opinion_params
     params.require(:opinion).permit(:title, :content)
+  end
+
+  def set_opinion
+    @opinion = Opinion.find(params[:id])
   end
 end

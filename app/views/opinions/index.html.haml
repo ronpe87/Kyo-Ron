@@ -1,10 +1,11 @@
-- @opinions.each do |opinion|
-  .card
-    .card_content
-      .card_title
-        = opinion.title
-      .card_detail
-        = opinion.content
-= link_to new_opinion_path do
-  .float_btn
-    = image_tag 'opinion.png'
+.container
+  - @opinions.each do |opinion|
+    .card
+      .card_content
+        .card_title
+          = opinion.title
+        .card_detail
+          = opinion.content
+  = link_to new_opinion_path do
+    .float_btn
+      = image_tag 'opinion.png'
