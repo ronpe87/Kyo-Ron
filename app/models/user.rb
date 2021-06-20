@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
   has_one :profile, dependent: :destroy
   has_many :opinions, dependent: :destroy
+
+  def display_name
+    self.email.split('@').first
+  end
 end

@@ -1,12 +1,6 @@
 .container
   - @opinions.each do |opinion|
-    = link_to opinion_path(opinion) do
-      .card
-        .card_content
-          .card_title
-            = opinion.title
-          .card_detail
-            = opinion.content
+    = render 'commons/opinion', opinion: opinion
   = link_to new_opinion_path do
     .float_btn
       = image_tag 'opinion.png'
