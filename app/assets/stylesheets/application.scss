@@ -1,6 +1,8 @@
 @import 'header';
 @import 'common';
-
+@import 'button';
+@import 'form';
+@import 'card';
 html {
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -12,14 +14,13 @@ html {
 }
 
 body {
-  height: 100%;
   font-size: 1em;
 }
 
 .container {
-  padding: 16px 16px;
   width: 100%;
-  margin-top: 52px;
+  margin-top: 64px;
+  padding-bottom: 12px;
 }
 
 .hidden {

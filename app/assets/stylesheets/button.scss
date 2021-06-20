@@ -1,0 +1,25 @@
+.float_btn {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+
+  img {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+.btn-submit {
+  text-align: center;
+}
+
+.btn-primary {
+  border: none;
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding: 16px 0;
+  font-weight: bold;
+  max-width: 500px;
+  background-color: black;
+}
