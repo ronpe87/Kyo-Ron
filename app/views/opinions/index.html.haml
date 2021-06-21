@@ -2,5 +2,5 @@
   - @opinions.each do |opinion|
     = render 'commons/opinion', opinion: opinion
   = link_to new_opinion_path do
-    .float_btn
+    .float_btn.new_opinion
       = image_tag 'opinion.png'

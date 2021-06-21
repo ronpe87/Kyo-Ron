@@ -29,4 +29,8 @@
       .flash
         - flash.each do |key, value|
           %div{:class => key}= value
+    - if !current_page?(root_path)
+      .float_btn.back
+        = link_to 'javascript:history.back()' do
+          = image_tag 'back.png'
     = yield

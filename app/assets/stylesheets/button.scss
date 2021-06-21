@@ -1,7 +1,5 @@
 .float_btn {
   position: fixed;
-  bottom: 16px;
-  right: 16px;
 
   img {
     width: 64px;
@@ -22,4 +20,14 @@
   font-weight: bold;
   max-width: 500px;
   background-color: black;
+}
+
+.back {
+  bottom: 16px;
+  left: 16px;
+}
+
+.new_opinion {
+  bottom: 16px;
+  right: 16px;
 }
