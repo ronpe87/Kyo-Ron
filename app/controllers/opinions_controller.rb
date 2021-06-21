@@ -22,6 +22,12 @@ class OpinionsController < ApplicationController
     end
   end
 
+  def destroy
+    opinion = current_user.opinions.find(params[:id])
+    opinion.destroy!
+    redirect_to root_path, notice: '削除に成功しました'
+  end
+
   private
   def opinion_params
     params.require(:opinion).permit(:title, :content)

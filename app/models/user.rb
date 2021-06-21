@@ -10,4 +10,8 @@ class User < ApplicationRecord
   def display_name
     self.email.split('@').first
   end
+
+  def has_written?(opinion)
+    opinions.exists?(id: opinion.id)
+  end
 end
