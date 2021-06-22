@@ -2,6 +2,8 @@
   .profilePage
     .profilePage_image
       = image_tag current_user.avatar_image
-
+    %p= current_user.profile.name
+    %p= current_user.profile.bio
+    = link_to 'Edit', edit_profile_path
   - current_user.opinions.each do |opinion|
     = render 'commons/opinion', opinion: opinion
