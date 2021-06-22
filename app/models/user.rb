@@ -14,4 +14,12 @@ class User < ApplicationRecord
   def has_written?(opinion)
     opinions.exists?(id: opinion.id)
   end
+
+  def avatar_image
+    if profile&.avatar&.attached?
+      profile.avatar
+    else
+      'default-avatar.png'
+    end
+  end
 end
