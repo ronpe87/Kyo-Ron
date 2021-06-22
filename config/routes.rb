@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   root to: "opinions#index"
 
   resources :opinions
-  resource :profile, only: [:new, :create]
+  resource :profile, only: [:show, :edit, :update]
 end

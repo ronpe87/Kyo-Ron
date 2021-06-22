@@ -1,0 +1,7 @@
+.container
+  .profilePage
+    .profilePage_image
+      = image_tag 'default-avatar.png'
+
+  - current_user.opinions.each do |opinion|
+    = render 'commons/opinion', opinion: opinion
