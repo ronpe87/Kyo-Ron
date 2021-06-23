@@ -1,6 +1,6 @@
 input {
   &.text {
-    width: 100%;
+    width: 99%;
     margin: 8px 0px;
     padding: 8px 2px;
     border: 2px solid #EBEBEB;
@@ -12,10 +12,10 @@ label {
 }
 
 textarea {
-  width: 100%;
+  width: 99%;
   margin: 8px 0px;
   padding: 8px 2px;
-  min-height: 380px;
+  min-height: 320px;
   resize: vertical;
   border: 2px solid #EBEBEB;
 }

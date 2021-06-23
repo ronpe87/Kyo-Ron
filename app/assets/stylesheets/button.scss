@@ -13,18 +13,18 @@
 
 .btn-primary {
   border: none;
-  width: 100%;
+  width: 56%;
   text-align: center;
   color: white;
   padding: 16px 0;
   font-weight: bold;
-  max-width: 500px;
   background-color: black;
 }
 
 .back {
   bottom: 16px;
   left: 16px;
+  z-index: 1;
 }
 
 .new_opinion {

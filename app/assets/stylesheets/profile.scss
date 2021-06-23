@@ -1,0 +1,32 @@
+.profilePage {
+  padding-top: 16px;
+  margin-bottom: 32px;
+  text-align: center;
+
+  &_image {
+    
+    img {
+      width: 64px;
+    }
+  }
+
+  &_name {
+    margin: 8px 0;
+  }
+
+  &_bio {
+    padding: 0 40px;
+  }
+}
+
+#profile-upload {
+  display: none;
+}
+
+.avatar_cancel {
+  display: inline-block;
+}
+
+.upload_btn {
+  display: inline-block;
+}

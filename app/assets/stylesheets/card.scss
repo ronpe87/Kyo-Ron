@@ -1,7 +1,7 @@
 .card {
   position: relative;
   margin-bottom: 24px;
-  height: 184px;
+  min-height: 184px;
   background: #F4F4F4;
   border-radius: 10px;
   font-family: Avenir;
@@ -48,7 +48,6 @@
     font-size: 16px;
     line-height: 16px;
     color: blue;
-    opacity: 0.5;
     display: flex;
 
     &_author {
@@ -61,6 +60,13 @@
       img {
         height: 24px;
         width: 24px;
+      }
+    }
+
+    &_avatar {
+      img {
+        height: 32px;
+        width: 32px;
       }
     }
   }
