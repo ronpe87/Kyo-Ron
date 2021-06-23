@@ -2,14 +2,17 @@
   .profilePage
     .profilePage_image
       = image_tag current_user.avatar_image
+    .profilePage_upload#profile-upload
+      .upload_btn
+        = link_to edit_profile_path do
+          %button プロフィール更新
+      .avatar_cancel
+        %button キャンセル
     .profilePage_name
       = current_user.profile.name
     .profilePage_bio
       = current_user.profile.bio
-    .profilePage_upload#profile-upload
-      = link_to 'Edit', edit_profile_path
-      .avatar_cancel
-        %button Cancel
+
   - current_user.opinions.each do |opinion|
     = render 'commons/opinion', opinion: opinion
 

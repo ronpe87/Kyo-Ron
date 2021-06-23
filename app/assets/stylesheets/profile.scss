@@ -1,12 +1,17 @@
 .profilePage {
   padding-top: 16px;
   margin-bottom: 32px;
+
   &_image {
     text-align: center;
 
     img {
       width: 64px;
     }
+  }
+
+  &_upload {
+    text-align: center;
   }
 
   &_name {
@@ -21,4 +26,12 @@
 
 #profile-upload {
   display: none;
+}
+
+.avatar_cancel {
+  display: inline-block;
+}
+
+.upload_btn {
+  display: inline-block;
 }
