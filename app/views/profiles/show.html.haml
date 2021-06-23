@@ -2,8 +2,15 @@
   .profilePage
     .profilePage_image
       = image_tag current_user.avatar_image
-    %p= current_user.profile.name
-    %p= current_user.profile.bio
-    = link_to 'Edit', edit_profile_path
+    .profilePage_name
+      = current_user.profile.name
+    .profilePage_bio
+      = current_user.profile.bio
+    .profilePage_upload#profile-upload
+      = link_to 'Edit', edit_profile_path
+      .avatar_cancel
+        %button Cancel
   - current_user.opinions.each do |opinion|
     = render 'commons/opinion', opinion: opinion
+
+= javascript_pack_tag 'profile'

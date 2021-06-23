@@ -1,11 +1,24 @@
 .profilePage {
   padding-top: 16px;
-  
+  margin-bottom: 32px;
   &_image {
     text-align: center;
 
     img {
-      width: 60px;
+      width: 64px;
     }
   }
+
+  &_name {
+    text-align: center;
+    margin: 8px 0;
+  }
+
+  &_bio {
+    padding: 0 40px;
+  }
+}
+
+#profile-upload {
+  display: none;
 }
