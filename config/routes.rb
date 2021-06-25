@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 
   resources :opinions
   resource :profile, only: [:show, :edit, :update]
+  resource :comments, only: [:index, :create]
 end

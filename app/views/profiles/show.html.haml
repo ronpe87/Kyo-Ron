@@ -9,9 +9,9 @@
       .avatar_cancel
         %button キャンセル
     .profilePage_name
-      = current_user.profile.name
+      #{current_user.display_name}
     .profilePage_bio
-      = current_user.profile.bio
+      = current_user.profile&.bio
 
   - current_user.opinions.each do |opinion|
     = render 'commons/opinion', opinion: opinion
