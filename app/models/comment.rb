@@ -1,3 +1,4 @@
 class Comment < ApplicationRecord
   belongs_to :opinion
+  validates :content, presence: true
 end
