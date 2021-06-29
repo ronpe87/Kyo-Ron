@@ -7,6 +7,7 @@ class OpinionsController < ApplicationController
   end
 
   def show
+    @opinion = Opinion.find(params[:id])
   end
 
   def new
