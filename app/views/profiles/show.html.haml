@@ -9,7 +9,7 @@
       .avatar_cancel
         %button キャンセル
     .profilePage_name
-      #{current_user.display_name}
+      = current_user.username
     .profilePage_bio
       = current_user.profile&.bio
 
