@@ -1,15 +1,28 @@
 .container
-  .card
-    .card_title
-      = @opinion.title
-    .card_content
-      = @opinion.content
-    .card_detail
-      .card_detail_author
-        %p= @opinion.author_name
-      .card_detail_created
-        %p= @opinion.display_created_at
-      .card_detail_delete
-        - if user_signed_in? && current_user.has_written?(@opinion)
-          = link_to image_tag('delete.png', class:'delete'), opinion_path(@opinion), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+  .flex
+    .card
+      .card_title
+        = @opinion.title
+      .card_content
+        = @opinion.content
+      .card_detail
+        .card_detail_author
+          %p= @opinion.author_name
+        .card_detail_created
+          %p= @opinion.display_created_at
+        .card_detail_delete
+          - if user_signed_in? && current_user.has_written?(@opinion)
+            = link_to image_tag('delete.png', class:'delete'), opinion_path(@opinion), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
 
+  .comment#opinion_show{data: {opinion_id: @opinion.id}}
+  .comments_container
+  .comment_form
+    .comment_btn.show_comment_form
+      = image_tag 'comment.png'
+    .comment_text_area.hidden
+      = text_area_tag :comment_content, '', class: 'sm'
+      .comment_btn
+        = image_tag 'cancel.png', class: 'comment_cancel'
+        = image_tag 'comment.png', class: 'add_comment_button'
+
+= javascript_pack_tag 'comment'

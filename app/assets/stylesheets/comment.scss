@@ -1,0 +1,38 @@
+.comment {
+  &_btn {
+    float: right;
+    img {
+      height: 64px;
+    }
+  }
+}
+
+.comments_user {
+  img {
+    height: 32px;
+    width: 32px;
+  }
+}
+
+.sm {
+  min-height: 10px;
+}
+
+.comment_form {
+  position: fixed;
+  left: 8px;
+  right: 8px;
+  bottom: 0px;
+  background-color: white;
+}
+
+.comments_container {
+  padding-top: 200px;
+  margin-bottom: 64px;
+}
+
+.comment_content {
+  width: 100%;
+  word-break : break-all;
+  overflow: hidden;
+}
