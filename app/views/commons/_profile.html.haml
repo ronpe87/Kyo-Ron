@@ -1,0 +1,23 @@
+.container
+  .profilePage
+    .profilePage_image
+      = image_tag user.avatar_image, class: 'icon'
+    - if user == current_user
+      .profilePage_upload#profile-upload
+        .upload_btn
+          = link_to edit_profile_path do
+            %button プロフィール更新
+        .avatar_cancel
+          %button キャンセル
+    - else
+      - if current_user&.has_followed?(user)
+        = link_to 'Unfollow', account_unfollows_path(user), data: {method: 'post'}
+      - else
+        = link_to 'Follow', account_follows_path(user), data: {method: 'post'}
+    .profilePage_name
+      = user.username
+    .profilePage_bio
+      = user.profile&.bio
+
+  - user.opinions.each do |opinion|
+    = render 'commons/opinion', opinion: opinion

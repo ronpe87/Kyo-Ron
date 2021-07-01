@@ -6,6 +6,8 @@
       .card_content
         = @opinion.content
       .card_detail
+        = link_to account_path(@opinion.user) do
+          = image_tag @opinion.user.avatar_image
         .card_detail_author
           %p= @opinion.author_name
         .card_detail_created
