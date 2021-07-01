@@ -17,7 +17,7 @@
           - if user_signed_in?
             - if current_page?(profile_path)
               .timeline-btn
-                %p= 'TL'
+                = link_to 'TL', timeline_path
             - else
               .dropdown
                 = image_tag current_user.avatar_image
