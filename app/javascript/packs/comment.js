@@ -14,6 +14,26 @@ const handleCommentForm = () => {
     $('.comment_text_area').addClass('hidden')
     $('.show_comment_form').removeClass('hidden')
   })
+
+  $('.show_comment_form2').on('click', () => {
+    $('.show_comment_form2').addClass('hidden')
+    $('.comment_text_area2').removeClass('hidden')
+  })
+
+  $('.comment_cancel2').on('click', () => {
+    $('.comment_text_area2').addClass('hidden')
+    $('.show_comment_form2').removeClass('hidden')
+  })
+
+  $('.show_comment_form3').on('click', () => {
+    $('.show_comment_form3').addClass('hidden')
+    $('.comment_text_area3').removeClass('hidden')
+  })
+
+  $('.comment_cancel3').on('click', () => {
+    $('.comment_text_area3').addClass('hidden')
+    $('.show_comment_form3').removeClass('hidden')
+  })
 }
 
 const appendNewComment = (comment) => {

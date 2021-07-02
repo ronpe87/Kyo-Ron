@@ -24,8 +24,18 @@
       = image_tag 'comment.png'
     .comment_text_area.hidden
       = text_area_tag :comment_content, '', class: 'sm'
-      = text_area_tag :comment_content2, '', class: 'sm'
-      = text_area_tag :comment_content3, '', class: 'sm'
+      .show_comment_form2
+        %button= 'comment2'
+      .comment_text_area2.hidden
+        = text_area_tag :comment_content2, '', class: 'sm'
+        .comment_cancel2
+          %button= 'cancel'
+      .show_comment_form3
+        %button= 'comment3'
+      .comment_text_area3.hidden
+        = text_area_tag :comment_content3, '', class: 'sm'
+        .comment_cancel3
+          %button= 'cancel'
       .comment_btn
         = image_tag 'cancel.png', class: 'comment_cancel'
         = image_tag 'comment.png', class: 'add_comment_button'
