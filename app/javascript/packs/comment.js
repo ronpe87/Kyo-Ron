@@ -27,6 +27,8 @@ const appendNewComment = (comment) => {
       </div>
       <div class="comment_content">
         <p>${comment.content}</p>
+        <p>${comment.content2}</p>
+        <p>${comment.content3}</p>
       </div>
     </div>`
   )
@@ -48,16 +50,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   $('.add_comment_button').on('click', () => {
     const content = $('#comment_content').val()
+    const content2 = $('#comment_content2').val()
+    const content3 = $('#comment_content3').val()
     if (!content) {
       window.alert('コメントを入力してください')
     } else {
       axios.post(`/opinions/${opinionId}/comments`, {
-        comment: { content: content }
+        comment: { content: content, content2: content2, content3: content3 }
       })
         .then((res) => {
           const comment = res.data
           appendNewComment(comment)
           $('#comment_content').val('')
+          $('#comment_content2').val('')
+          $('#comment_content3').val('')
         })
     }
   })

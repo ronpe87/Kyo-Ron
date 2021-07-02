@@ -52,6 +52,12 @@
 
     &_author {
       margin-right: 8px;
+
+      &_image {
+        img {
+          height: 32px;
+        }
+      }
     }
 
     &_delete {

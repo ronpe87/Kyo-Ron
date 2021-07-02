@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_30_131911) do
+ActiveRecord::Schema.define(version: 2021_07_01_133544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(version: 2021_06_30_131911) do
     t.text "content", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "content2"
+    t.text "content3"
     t.index ["opinion_id"], name: "index_comments_on_opinion_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
