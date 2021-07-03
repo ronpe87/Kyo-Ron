@@ -7,12 +7,22 @@ axios.defaults.headers.common['X-CSRF-Token'] = csrfToken()
 const handleCommentForm = () => {
   $('.show_comment_form').on('click', () => {
     $('.show_comment_form').addClass('hidden')
-    $('.comment_text_area').removeClass('hidden')
+    $('.comment_area').removeClass('hidden')
   })
 
   $('.comment_cancel').on('click', () => {
-    $('.comment_text_area').addClass('hidden')
+    $('.comment_area').addClass('hidden')
     $('.show_comment_form').removeClass('hidden')
+  })
+
+  $('.show_comment_form1').on('click', () => {
+    $('.show_comment_form1').addClass('hidden')
+    $('.comment_text_area1').removeClass('hidden')
+  })
+
+  $('.comment_cancel1').on('click', () => {
+    $('.comment_text_area1').addClass('hidden')
+    $('.show_comment_form1').removeClass('hidden')
   })
 
   $('.show_comment_form2').on('click', () => {
@@ -92,6 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
           $('#comment_content').val('')
           $('#comment_content2').val('')
           $('#comment_content3').val('')
+          $('.show_comment_form').removeClass('hidden')
+          $('.comment_area').addClass('hidden')
         })
     }
   })

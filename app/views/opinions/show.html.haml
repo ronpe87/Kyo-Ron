@@ -22,8 +22,13 @@
   .comment_form
     .comment_btn.show_comment_form
       = image_tag 'comment.png'
-    .comment_text_area.hidden
-      = text_area_tag :comment_content, '', class: 'sm'
+    .comment_area.hidden
+      .show_comment_form1
+        %button= 'comment1'
+      .comment_text_area1.hidden
+        = text_area_tag :comment_content, '', class: 'sm'
+        .comment_cancel1
+          %button= 'cancel'
       .show_comment_form2
         %button= 'comment2'
       .comment_text_area2.hidden
