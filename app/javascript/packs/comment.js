@@ -39,16 +39,24 @@ const handleCommentForm = () => {
 const appendNewComment = (comment) => {
   $('.comments_container').append(
     `<div class="comment_detail">
-      <div class="comments_user">
-        <img class='comments_user_avatar' src="${comment.user.avatar_comment_image}">
-      </div>
-      <div class="comments_name">
-        <p>${comment.user.username}</p>
-      </div>
       <div class="comment_content">
-        <p>${comment.content}</p>
-        <p>${comment.content2}</p>
-        <p>${comment.content3}</p>
+        <div class="comment_content_blue">
+          <p>${comment.content}</p>
+        </div>
+        <div class="comment_content_yellow">
+          <p>${comment.content2}</p>
+        </div>
+        <div class="comment_content_red">
+          <p>${comment.content3}</p>
+        </div>
+      </div>
+      <div class="comments_user">
+        <div class="comments_user_flex">
+          <div class="comments_user_avatar">
+            <img src="${comment.user.avatar_comment_image}">
+          </div>
+          <div class="comments_user_name">${comment.user.username}</div>
+        </div>
       </div>
     </div>`
   )
