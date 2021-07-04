@@ -50,13 +50,13 @@ const appendNewComment = (comment) => {
   $('.comments_container').append(
     `<div class="comment_detail">
       <div class="comment_content">
-        <div class="comment_content_blue">
+        <div class="comment_content_signal blue">
           <p>${comment.content}</p>
         </div>
-        <div class="comment_content_yellow">
+        <div class="comment_content_signal yellow">
           <p>${comment.content2}</p>
         </div>
-        <div class="comment_content_red">
+        <div class="comment_content_signal red">
           <p>${comment.content3}</p>
         </div>
       </div>

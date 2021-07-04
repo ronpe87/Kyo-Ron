@@ -41,30 +41,26 @@
   word-break : break-all;
   overflow: hidden;
 
-  &_blue {
+  &_signal {
     margin: 0px 8px;
     padding: 0px 4px;
     border-radius: 4px;
-    background-color: #00FFFF;
-  }
-
-  &_yellow {
-    margin: 0px 8px;
-    padding: 0px 4px;
-    border-radius: 4px;
-    background-color: #FFFF00;
-  }
-
-  &_red {
-    margin: 0px 8px;
-    padding: 0px 4px;
-    border-radius: 4px;
-    background-color: #FF0033;
   }
 }
 
-.comments_user {
+.blue {
+  background-color: #00FFFF;
+}
 
+.yellow {
+  background-color: #FFFF00;
+}
+
+.red {
+  background-color: #FF0033;
+}
+
+.comments_user {
 
   &_flex {
     display: flex;
@@ -84,3 +80,20 @@
   }
 }
 
+.signal {
+  width: 64px;
+  margin-left: auto;
+
+  img {
+    height: 40px;
+  }
+}
+
+.batsu {
+  width: 64px;
+  margin-left: auto;
+  
+  img {
+    height: 40px;
+  }
+}

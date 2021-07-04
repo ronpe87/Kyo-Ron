@@ -24,24 +24,24 @@
       .comment_btn.show_comment_form
         = image_tag 'comment.png'
       .comment_area.hidden
-        .show_comment_form1
-          %button= 'comment1'
+        .show_comment_form1.signal
+          = image_tag 'signal_blue.png'
         .comment_text_area1.hidden
           = text_area_tag :comment_content, '', class: 'sm'
-          .comment_cancel1
-            %button= 'cancel'
-        .show_comment_form2
-          %button= 'comment2'
+          .comment_cancel1.batsu
+            = image_tag 'cancel2.png'
+        .show_comment_form2.signal
+          = image_tag 'signal_yellow.png'
         .comment_text_area2.hidden
           = text_area_tag :comment_content2, '', class: 'sm'
-          .comment_cancel2
-            %button= 'cancel'
-        .show_comment_form3
-          %button= 'comment3'
+          .comment_cancel2.batsu
+            = image_tag 'cancel2.png'
+        .show_comment_form3.signal
+          = image_tag 'signal_red.png'
         .comment_text_area3.hidden
           = text_area_tag :comment_content3, '', class: 'sm'
-          .comment_cancel3
-            %button= 'cancel'
+          .comment_cancel3.batsu
+            = image_tag 'cancel2.png'
         .comment_btn
           = image_tag 'cancel.png', class: 'comment_cancel'
           = image_tag 'comment.png', class: 'add_comment_button'
