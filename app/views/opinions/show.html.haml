@@ -19,30 +19,31 @@
 
   .comment#opinion_show{data: {opinion_id: @opinion.id}}
   .comments_container
-  .comment_form
-    .comment_btn.show_comment_form
-      = image_tag 'comment.png'
-    .comment_area.hidden
-      .show_comment_form1
-        %button= 'comment1'
-      .comment_text_area1.hidden
-        = text_area_tag :comment_content, '', class: 'sm'
-        .comment_cancel1
-          %button= 'cancel'
-      .show_comment_form2
-        %button= 'comment2'
-      .comment_text_area2.hidden
-        = text_area_tag :comment_content2, '', class: 'sm'
-        .comment_cancel2
-          %button= 'cancel'
-      .show_comment_form3
-        %button= 'comment3'
-      .comment_text_area3.hidden
-        = text_area_tag :comment_content3, '', class: 'sm'
-        .comment_cancel3
-          %button= 'cancel'
-      .comment_btn
-        = image_tag 'cancel.png', class: 'comment_cancel'
-        = image_tag 'comment.png', class: 'add_comment_button'
+  - if user_signed_in? && !current_user.has_written?(@opinion)
+    .comment_form
+      .comment_btn.show_comment_form
+        = image_tag 'comment.png'
+      .comment_area.hidden
+        .show_comment_form1
+          %button= 'comment1'
+        .comment_text_area1.hidden
+          = text_area_tag :comment_content, '', class: 'sm'
+          .comment_cancel1
+            %button= 'cancel'
+        .show_comment_form2
+          %button= 'comment2'
+        .comment_text_area2.hidden
+          = text_area_tag :comment_content2, '', class: 'sm'
+          .comment_cancel2
+            %button= 'cancel'
+        .show_comment_form3
+          %button= 'comment3'
+        .comment_text_area3.hidden
+          = text_area_tag :comment_content3, '', class: 'sm'
+          .comment_cancel3
+            %button= 'cancel'
+        .comment_btn
+          = image_tag 'cancel.png', class: 'comment_cancel'
+          = image_tag 'comment.png', class: 'add_comment_button'
 
 = javascript_pack_tag 'comment'
