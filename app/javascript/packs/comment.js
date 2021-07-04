@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const content = $('#comment_content').val()
     const content2 = $('#comment_content2').val()
     const content3 = $('#comment_content3').val()
-    if (!content) {
+    if (!content && !content2 && !content3) {
       window.alert('コメントを入力してください')
     } else {
       axios.post(`/opinions/${opinionId}/comments`, {
