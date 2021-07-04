@@ -7,13 +7,6 @@
   }
 }
 
-.comments_user {
-  img {
-    height: 32px;
-    width: 32px;
-  }
-}
-
 .sm {
   min-height: 10px;
 }
@@ -31,8 +24,76 @@
   margin-bottom: 64px;
 }
 
+.comment_detail {
+  position: relative;
+  min-height: 96px;
+  padding: 8px;
+  background: #F4F4F4;
+  margin-bottom: 24px;
+  border-radius: 10px;
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: normal;
+}
+
 .comment_content {
   width: 100%;
   word-break : break-all;
   overflow: hidden;
+
+  &_signal {
+    margin: 0px 8px;
+    padding: 0px 4px;
+    border-radius: 4px;
+  }
+}
+
+.blue {
+  background-color: #00FFFF;
+}
+
+.yellow {
+  background-color: #FFFF00;
+}
+
+.red {
+  background-color: #FF0033;
+}
+
+.comments_user {
+
+  &_flex {
+    display: flex;
+    justify-content: flex-end; //displayflexを寄せできる
+  }
+
+  &_avatar {
+    img {
+      height: 32px;
+      width: 32px;
+    }
+  }
+
+  &_name {
+    right: 0px;
+    margin-top: 14px;
+  }
+}
+
+.signal {
+  width: 64px;
+  margin-left: auto;
+
+  img {
+    height: 40px;
+  }
+}
+
+.batsu {
+  width: 64px;
+  margin-left: auto;
+  
+  img {
+    height: 40px;
+  }
 }

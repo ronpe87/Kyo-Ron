@@ -2,7 +2,7 @@
   position: relative;
   margin-bottom: 24px;
   min-height: 184px;
-  background: #F4F4F4;
+  background: #C0C0C0;
   border-radius: 10px;
   font-family: Avenir;
   font-style: normal;
@@ -42,31 +42,27 @@
 
   &_detail {
     position: absolute;
-    padding: 0px 16px;
-    right: 0px;
+    right: 16px;
     bottom: 0px;
     font-size: 16px;
     line-height: 16px;
-    color: blue;
     display: flex;
 
     &_author {
       margin-right: 8px;
+
+      &_image {
+        img {
+          height: 32px;
+        }
+      }
     }
 
     &_delete {
       margin-top: 8px;
-      margin-left: 8px;
       img {
         height: 24px;
         width: 24px;
-      }
-    }
-
-    &_avatar {
-      img {
-        height: 32px;
-        width: 32px;
       }
     }
   }
@@ -76,4 +72,5 @@
   position: fixed;
   left: 8px;
   right: 8px;
+  z-index: 1;
 }

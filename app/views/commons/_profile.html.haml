@@ -11,9 +11,9 @@
           %button キャンセル
     - else
       - if current_user&.has_followed?(user)
-        = link_to 'Unfollow', account_unfollows_path(user), data: {method: 'post'}
+        = link_to 'フォロー解除', account_unfollows_path(user), data: {method: 'post'}
       - else
-        = link_to 'Follow', account_follows_path(user), data: {method: 'post'}
+        = link_to 'フォロー', account_follows_path(user), data: {method: 'post'}
     .profilePage_name
       = user.username
     .profilePage_bio
