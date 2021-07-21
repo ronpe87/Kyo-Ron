@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
   def index
     opinion = Opinion.find(params[:opinion_id])
     comments = opinion.comments
+
     render json: comments, include: { user: [ :profile] }
   end
 
@@ -12,6 +13,11 @@ class CommentsController < ApplicationController
     @comment.save!
 
     render json: @comment, include: { user: [ :profile] }
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy!
   end
 
   private

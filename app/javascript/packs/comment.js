@@ -66,6 +66,9 @@ const appendNewComment = (comment) => {
             <img src="${comment.user.avatar_comment_image}">
           </div>
           <div class="comments_user_name">${comment.user.username}</div>
+          <div class="card_detail_delete">
+            <a href="/opinions/opinion_id/comments/${comment.id}" data-method="delete" data-confirm="Are you sure?">Delete</a>
+          </div>
         </div>
       </div>
     </div>`
@@ -107,4 +110,8 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
   })
+
+  $('.comments_container').on('click', '.card_detail_delete', function() {
+    $(this).parents('.comment_detail').remove();
+  });
 })
