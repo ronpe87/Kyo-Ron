@@ -8,6 +8,7 @@ class OpinionsController < ApplicationController
 
   def show
     @opinion = Opinion.find(params[:id])
+    @comments = @opinion.comments
   end
 
   def new
@@ -17,7 +18,7 @@ class OpinionsController < ApplicationController
   def create
     @opinion = current_user.opinions.build(opinion_params)
     if @opinion.save
-      redirect_to opinion_path(@opinion), notice: '保存できました'
+      redirect_to root_path(@opinion), notice: '保存できました'
     else
       render :new
     end
