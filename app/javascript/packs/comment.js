@@ -66,8 +66,10 @@ const appendNewComment = (comment) => {
             <img src="${comment.user.avatar_comment_image}">
           </div>
           <div class="comments_user_name">${comment.user.username}</div>
-          <div class="card_detail_delete" id="${comment.user.id}">
-            <a href="/opinions/opinion_id/comments/${comment.id}" data-method="delete" data-confirm="コメントを削除してもよろしいですか?">Delete</a>
+          <div class="delete-space">
+            <div class="card_detail_delete hidden" id="${comment.user.id}">
+              <a href="/opinions/opinion_id/comments/${comment.id}" data-method="delete" data-confirm="コメントを削除してもよろしいですか?"><img src="/assets/delete.png"></a>
+            </div>
           </div>
         </div>
       </div>
@@ -87,11 +89,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const comments = response.data
       comments.forEach((comment) => {
         appendNewComment(comment)
-        const commentUserId = comment.user.id
+        // const commentUserId = comment.user.id
         // console.log(comment.user)
         // console.log(commentUserId)
         // if (Current == commentUserId) {
-        $('[id*=' + Current + ']').addClass('hidden')
+        $('[id*=' + Current + ']').removeClass('hidden')
         // }
       })
     })
