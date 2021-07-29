@@ -66,6 +66,11 @@ const appendNewComment = (comment) => {
             <img src="${comment.user.avatar_comment_image}">
           </div>
           <div class="comments_user_name">${comment.user.username}</div>
+          <div class="delete-space">
+            <div class="card_detail_delete hidden" id="${comment.user.id}">
+              <a href="/opinions/opinion_id/comments/${comment.id}" data-method="delete" data-confirm="コメントを削除してもよろしいですか?"><img src="/assets/delete.png"></a>
+            </div>
+          </div>
         </div>
       </div>
     </div>`
@@ -75,12 +80,21 @@ const appendNewComment = (comment) => {
 document.addEventListener('DOMContentLoaded', () => {
   const dataset = $('#opinion_show').data()
   const opinionId = dataset.opinionId
+  const commentdataset = $('#comment_user').data()
+  const Current = $(commentdataset).attr('userId');
 
   axios.get(`/opinions/${opinionId}/comments`)
+
     .then((response) => {
       const comments = response.data
       comments.forEach((comment) => {
         appendNewComment(comment)
+        // const commentUserId = comment.user.id
+        // console.log(comment.user)
+        // console.log(commentUserId)
+        // if (Current == commentUserId) {
+        $('[id*=' + Current + ']').removeClass('hidden')
+        // }
       })
     })
 
@@ -107,4 +121,18 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
   })
+
+  $('.comments_container').on('click', '.card_detail_delete', function() {
+    $(this).parents('.comment_detail').remove();
+  });
+  // $('.comments_container').on('click', '.comments_user_name', function() {
+  // const commentId = $(this).attr('id');
+  // const commentdataset = $('#comment_user').data()
+  // const Current = $(commentdataset).attr('userId');
+  //   if (commentId == Current) {
+  //     window.alert('一致')
+  //   } else {
+  //     console.log(commentId)
+  //   }
+  // })
 })

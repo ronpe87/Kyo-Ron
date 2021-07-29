@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resource :timeline, only: [:show]
 
   resources :opinions do
-    resources :comments, only: [:index, :create]
+    resources :comments, only: [:index, :create, :destroy]
   end
 
   resources :accounts, only: [:show] do

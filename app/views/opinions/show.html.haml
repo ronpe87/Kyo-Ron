@@ -18,7 +18,7 @@
             = link_to image_tag('delete.png', class:'delete'), opinion_path(@opinion), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
 
   .comment#opinion_show{data: {opinion_id: @opinion.id}}
-  .comments_container
+  .comments_container#comment_user{data: {user_id: current_user.id}}
   - if user_signed_in? && !current_user.has_written?(@opinion)
     .comment_form
       .comment_btn.show_comment_form
