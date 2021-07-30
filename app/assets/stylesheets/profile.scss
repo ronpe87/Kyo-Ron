@@ -4,7 +4,7 @@
   text-align: center;
 
   &_image {
-    
+
     img {
       width: 64px;
     }
@@ -29,4 +29,18 @@
 
 .upload_btn {
   display: inline-block;
+}
+
+.unfollow_btn {
+  background-color: #C0C0C0;
+  width: 128px;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+
+.follow_btn {
+  background-color: #C0C0C0;
+  width: 128px;
+  margin: 0 auto;
+  border-radius: 4px;
 }

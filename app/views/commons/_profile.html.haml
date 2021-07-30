@@ -11,9 +11,15 @@
           %button キャンセル
     - else
       - if current_user&.has_followed?(user)
-        = link_to 'フォロー解除', account_unfollows_path(user), data: {method: 'post'}
+        .unfollow_btn
+          = link_to 'フォロー解除', account_unfollows_path(user), data: {method: 'post'}
+        .follow_btn.hidden
+          = link_to 'フォロー', account_follows_path(user), data: {method: 'post'}
       - else
-        = link_to 'フォロー', account_follows_path(user), data: {method: 'post'}
+        .follow_btn
+          = link_to 'フォロー', account_follows_path(user), data: {method: 'post'}
+        .unfollow_btn.hidden
+          = link_to 'フォロー解除', account_unfollows_path(user), data: {method: 'post'}
     .profilePage_name
       = user.username
     .profilePage_bio
@@ -21,3 +27,5 @@
 
   - user.opinions.each do |opinion|
     = render 'commons/opinion', opinion: opinion
+
+= javascript_pack_tag 'profile'
