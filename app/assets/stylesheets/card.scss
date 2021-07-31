@@ -1,7 +1,6 @@
 .card {
-  position: relative;
+  padding: 16px 16px 0px 16px;
   margin-bottom: 24px;
-  min-height: 184px;
   background: #C0C0C0;
   border-radius: 10px;
   font-family: Avenir;
@@ -9,44 +8,36 @@
   font-weight: normal;
 
   &_title {
-    position: absolute;
-    height: 24px;
+    width: 100%;
     left: 16px;
-    top: 32px;
+    top: 24px;
 
     font-size: 24px;
     line-height: 24px;
     color: #000000;
     word-wrap: break-word;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
   }
 
   &_content {
-    position: absolute;
-    padding: 8px 16px;
-    top: 64px;
-
+    width: 100%;
+    padding-top: 8px;
+    position: relative;
     font-size: 16px;
     line-height: 16px;
-    word-wrap: break-word;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    overflow: hidden; //はみ出した部分を隠す
     color: #000000;
+    word-wrap: break-word; //改行
 
     mix-blend-mode: normal;
     opacity: 0.5;
   }
 
   &_detail {
-    position: absolute;
-    right: 16px;
-    bottom: 0px;
     font-size: 16px;
     line-height: 16px;
     display: flex;
+    justify-content: flex-end;
+    height: 40px;
 
     &_author {
       margin-right: 8px;
@@ -68,13 +59,20 @@
   }
 }
 
-.flex {
-  position: fixed;
-  left: 8px;
-  right: 8px;
-  z-index: 1;
-}
-
 .delete-space {
   width: 24px;
+}
+
+.content_height {
+  height: 72px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.title_index {
+  height: 26px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
