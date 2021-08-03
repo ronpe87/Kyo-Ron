@@ -80,7 +80,7 @@ const appendNewComment = (comment) => {
 document.addEventListener('DOMContentLoaded', () => {
   const dataset = $('#opinion_show').data()
   const opinionId = dataset.opinionId
-  const commentdataset = $('#comment_user').data()
+  const commentdataset = $('#opinion_show').data()
   const Current = $(commentdataset).attr('userId');
 
   axios.get(`/opinions/${opinionId}/comments`)

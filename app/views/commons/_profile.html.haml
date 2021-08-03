@@ -2,6 +2,10 @@
   .profilePage
     .profilePage_image
       = image_tag user.avatar_image, class: 'icon'
+    .profilePage_name
+      = user.username
+    .profilePage_bio
+      = user.profile&.bio
     - if user == current_user
       .profilePage_upload#profile-upload
         .upload_btn
@@ -20,10 +24,6 @@
           = link_to 'フォロー', account_follows_path(user), data: {method: 'post'}
         .unfollow_btn.hidden
           = link_to 'フォロー解除', account_unfollows_path(user), data: {method: 'post'}
-    .profilePage_name
-      = user.username
-    .profilePage_bio
-      = user.profile&.bio
 
   - user.opinions.each do |opinion|
     = render 'commons/opinion', opinion: opinion
