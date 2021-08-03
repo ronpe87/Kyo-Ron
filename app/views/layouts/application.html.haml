@@ -13,6 +13,8 @@
       %header.header
         .header_title
           = link_to 'Signal', root_path
+        .guest
+          = link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post
         .header_right
           - if user_signed_in?
             - if current_page?(profile_path)
