@@ -43,6 +43,10 @@ class User < ApplicationRecord
     followings.count
   end
 
+  def followers_count
+    followers.count
+  end
+
   def avatar_image
     if profile&.avatar&.attached?
       profile.avatar
