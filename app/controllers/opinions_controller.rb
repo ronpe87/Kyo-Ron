@@ -1,6 +1,6 @@
 class OpinionsController < ApplicationController
   before_action :set_opinion, only: [:show]
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :show]
 
   def index
     @opinions = Opinion.all
