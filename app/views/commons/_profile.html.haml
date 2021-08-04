@@ -19,17 +19,10 @@
         .avatar_cancel
           %button キャンセル
     - else
-      - if current_user&.has_followed?(user)
-        .unfollow_btn
-          = link_to 'フォロー解除', account_unfollows_path(user), data: {method: 'post'}
-        .follow_btn.hidden
-          = link_to 'フォロー', account_follows_path(user), data: {method: 'post'}
-      - else
-        .follow_btn
-          = link_to 'フォロー', account_follows_path(user), data: {method: 'post'}
-        .unfollow_btn.hidden
-          = link_to 'フォロー解除', account_unfollows_path(user), data: {method: 'post'}
-
+      .profilePage_followbtn_following.hidden.following
+        %p Following
+      .profilePage_followbtn_unfollowing.hidden.unfollowing
+        %p Follow
   - user.opinions.each do |opinion|
     = render 'commons/opinion', opinion: opinion
 
