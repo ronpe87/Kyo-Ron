@@ -39,6 +39,10 @@ class User < ApplicationRecord
     following_relationships.exists?(following_id: user.id)
   end
 
+  def followings_count
+    followings.count
+  end
+
   def avatar_image
     if profile&.avatar&.attached?
       profile.avatar

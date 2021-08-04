@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   end
 
   resources :accounts, only: [:show] do
-    resources :follows, only: [:create]
+    resources :followings, only: [:index]
+    resources :follows, only: [:index, :create]
     resources :unfollows, only: [:create]
   end
 

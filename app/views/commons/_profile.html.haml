@@ -6,6 +6,9 @@
       = user.username
     .profilePage_bio
       = user.profile&.bio
+    .profilePage_following_count
+      = link_to account_followings_path(user) do
+        %p= user.followings_count
     - if user == current_user
       .profilePage_upload#profile-upload
         .upload_btn
