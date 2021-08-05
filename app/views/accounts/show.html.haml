@@ -1,1 +1,4 @@
-= render 'commons/profile', user: @user
+.container#account-show{data: {account_id: @user.id, user_id: current_user.id}}
+  = render 'commons/profile', user: @user
+
+= javascript_pack_tag 'follow'

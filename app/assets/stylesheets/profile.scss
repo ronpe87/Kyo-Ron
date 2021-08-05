@@ -17,6 +17,29 @@
   &_bio {
     padding: 0 40px;
   }
+
+  &_count {
+    &_container {
+      display: flex;
+      justify-content: center;
+      margin-left: 48px;
+    }
+
+    &_followings {
+      margin-left: 24px;
+      margin-right: 24px;
+    }
+  }
+
+  &_followbtn {
+    width: 88px;
+    height: 28px;
+    border: 1px solid ;
+    border-radius: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 4px;
+  }
 }
 
 #profile-upload {

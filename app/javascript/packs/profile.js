@@ -10,13 +10,4 @@ document.addEventListener('DOMContentLoaded', () => {
       $('#profile-upload').fadeOut();
     });
   });
-
-  $('.follow_btn').on('click', () => {
-    $('.follow_btn').addClass('hidden')
-    $('.unfollow_btn').removeClass('hidden')
-  })
-  $('.unfollow_btn').on('click', () => {
-    $('.unfollow_btn').addClass('hidden')
-    $('.follow_btn').removeClass('hidden')
-  })
 });
