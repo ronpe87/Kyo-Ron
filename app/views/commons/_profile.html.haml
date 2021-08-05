@@ -6,11 +6,24 @@
       = user.username
     .profilePage_bio
       = user.profile&.bio
-    .profilePage_following_count
-      = link_to account_followings_path(user) do
-        %p= @user.followings_count
-      = link_to account_follows_path(user) do
-        %p= @user.followers_count
+    .profilePage_count_container
+      .profilePage_count_opinions
+        .profilePage_count_opinions_title
+          %p= '投稿'
+        .profilePage_count_opinions_num
+          %p= user.opinions_count
+      .profilePage_count_followings
+        .profilePage_count_followings_title
+          %p= 'フォロー'
+        .profilePage_count_followings_num
+          = link_to account_followings_path(user) do
+            %p= user.followings_count
+      .profilePage_count_followers
+        .profilePage_count_followers_title
+          %p= 'フォロワー'
+        .profilePage_count_followers_num#follower_count
+          = link_to account_follows_path(user) do
+            %p= user.followers_count
     - if user == current_user
       .profilePage_upload#profile-upload
         .upload_btn
@@ -19,10 +32,10 @@
         .avatar_cancel
           %button キャンセル
     - else
-      .profilePage_followbtn_following.hidden.following
-        %p Following
-      .profilePage_followbtn_unfollowing.hidden.unfollowing
-        %p Follow
+      .profilePage_followbtn.hidden.following
+        Following
+      .profilePage_followbtn.hidden.follow
+        Follow
   - user.opinions.each do |opinion|
     = render 'commons/opinion', opinion: opinion
 

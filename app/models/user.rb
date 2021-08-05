@@ -47,6 +47,10 @@ class User < ApplicationRecord
     followers.count
   end
 
+  def opinions_count
+    opinions.count
+  end
+
   def avatar_image
     if profile&.avatar&.attached?
       profile.avatar
