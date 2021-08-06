@@ -31,6 +31,7 @@ gem 'hamlit-rails'
 gem 'devise'
 gem 'active_model_serializers'
 gem 'sidekiq'
+gem 'devise-i18n'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
