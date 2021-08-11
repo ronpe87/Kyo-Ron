@@ -33,9 +33,9 @@
           %button キャンセル
     - else
       .profilePage_followbtn.hidden.following
-        Following
+        フォローを外す
       .profilePage_followbtn.hidden.follow
-        Follow
+        フォローする
   - user.opinions.each do |opinion|
     = render 'commons/opinion', opinion: opinion
 
