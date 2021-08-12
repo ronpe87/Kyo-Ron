@@ -1,0 +1,19 @@
+{
+  "name": "kyo-ron",
+  "description": "This is kyo-ron",
+  "keywords": [],
+  "website": "",
+  "repository": "https://github.com/ronpe87/Kyo-Ron",
+  "env": {},
+  "addons": [
+    "heroku-postgresql:hobby-dev"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
