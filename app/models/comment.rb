@@ -6,7 +6,7 @@ class Comment < ApplicationRecord
 
   private
   def send_email
-    SendEmail.test_email
+    SendEmail.test_email(opinion)
     CommentMailer.new_comment(opinion).deliver_later #開発環境でletter_openerにて閲覧可能
   end
 end
