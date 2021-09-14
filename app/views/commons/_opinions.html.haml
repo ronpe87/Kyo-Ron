@@ -1,6 +1,7 @@
 .container
   - @opinions.each do |opinion|
-    = render 'commons/opinion', opinion: opinion
+    = link_to opinion_path(opinion) do
+      = render 'commons/opinion', opinion: opinion
   = link_to new_opinion_path do
     .float_btn.new_opinion
       = image_tag 'opinion.png'
