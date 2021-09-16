@@ -30,6 +30,10 @@
 
     mix-blend-mode: normal;
     opacity: 0.5;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    height: 72px;
   }
 
   &_detail {
@@ -61,13 +65,6 @@
 
 .delete-space {
   width: 24px;
-}
-
-.content_height {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  height: 72px;
 }
 
 .title_index {

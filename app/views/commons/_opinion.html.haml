@@ -1,13 +1,16 @@
-= link_to opinion_path(opinion) do
-  .card
-    .card_title.title_index
-      = opinion.title
-    .card_content.content_height
-      = opinion.content
-    .card_detail
-      .card_detail_author_image
+.card
+  .card_title
+    = opinion.title
+  .card_content
+    = opinion.content
+  .card_detail
+    .card_detail_author_image
+      = link_to account_path(opinion.user) do
         = image_tag opinion.user.avatar_image
-      .card_detail_author
-        %p= opinion.user.username
-      .card_detail_created
-        %p= opinion.display_created_at
+    .card_detail_author
+      %p= opinion.user.username
+    .card_detail_created
+      %p= opinion.display_created_at
+    .card_detail_delete
+      - if user_signed_in? && current_user.has_written?(opinion)
+        = link_to image_tag('delete.png', class:'delete'), opinion_path(opinion), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }

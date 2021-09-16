@@ -1,24 +1,30 @@
 .container
-  .card
-    .card_title
-      = @opinion.title
-    .card_content
-      = @opinion.content
-    .card_detail
-      .card_detail_author_image
-        = link_to account_path(@opinion.user) do
-          = image_tag @opinion.user.avatar_image
-      .card_detail_author
-        %p= @opinion.user.username
-      .card_detail_created
-        %p= @opinion.display_created_at
-      .card_detail_delete
-        - if user_signed_in? && current_user.has_written?(@opinion)
-          = link_to image_tag('delete.png', class:'delete'), opinion_path(@opinion), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
-
+  = render 'commons/opinion', opinion: @opinion
   - if user_signed_in?
-    .comment#opinion_show{data: {opinion_id: @opinion.id, user_id: current_user.id}}
+    .comment#opinion_show{data: {opinion_id: @opinion.id, user_id: current_user.id, comments: @comments}}
   .comments_container
+    .comments_signal
+      .comments_signal_all
+        %button All
+      .comments_signal_blue
+        = image_tag 'signal_blue.png'
+      .comments_signal_yellow
+        = image_tag 'signal_yellow.png'
+      .comments_signal_red
+        = image_tag 'signal_red.png'
+    .card_signal
+      .card_blue.hidden
+        - @comments.each do |comment|
+          - if comment.content.present?
+            = render 'commons/comment', comment: comment
+      .card_yellow.hidden
+        - @comments.each do |comment|
+          - if comment.content2.present?
+            = render 'commons/comment', comment: comment
+      .card_red.hidden
+        - @comments.each do |comment|
+          - if comment.content3.present?
+            = render 'commons/comment', comment: comment
   - if user_signed_in? && !current_user.has_written?(@opinion)
     .comment_form
       .comment_btn.show_comment_form
