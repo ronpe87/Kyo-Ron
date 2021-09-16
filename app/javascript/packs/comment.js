@@ -129,6 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   $('.comments_signal_blue').on('click', () => {
+    $('.card_signal').removeClass('hidden')
     $('.card_blue').removeClass('hidden')
     $('.card_yellow').addClass('hidden')
     $('.card_red').addClass('hidden')
@@ -139,6 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   $('.comments_signal_yellow').on('click', () => {
+    $('.card_signal').removeClass('hidden')
     $('.card_yellow').removeClass('hidden')
     $('.card_blue').addClass('hidden')
     $('.card_red').addClass('hidden')
@@ -149,6 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   $('.comments_signal_red').on('click', () => {
+    $('.card_signal').removeClass('hidden')
     $('.card_red').removeClass('hidden')
     $('.card_yellow').addClass('hidden')
     $('.card_blue').addClass('hidden')
@@ -156,4 +159,12 @@ document.addEventListener('DOMContentLoaded', () => {
     $('.red').removeClass('hidden')
     $('.yellow').addClass('hidden')
     $('.blue').addClass('hidden')
+  })
+
+  $('.comments_signal_all').on('click', () => {
+    $('.all').removeClass('hidden')
+    $('.blue').removeClass('hidden')
+    $('.yellow').removeClass('hidden')
+    $('.red').removeClass('hidden')
+    $('.card_signal').addClass('hidden')
   })
