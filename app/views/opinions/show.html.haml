@@ -12,13 +12,16 @@
         = image_tag 'signal_red.png'
     .card_blue.hidden
       - @comments.each do |comment|
-        = render 'commons/comment', comment: comment
+        - if comment.content.present?
+          = render 'commons/comment', comment: comment
     .card_yellow.hidden
       - @comments.each do |comment|
-        = render 'commons/comment', comment: comment
+        - if comment.content2.present?
+          = render 'commons/comment', comment: comment
     .card_red.hidden
       - @comments.each do |comment|
-        = render 'commons/comment', comment: comment
+        - if comment.content3.present?
+          = render 'commons/comment', comment: comment
   - if user_signed_in? && !current_user.has_written?(@opinion)
     .comment_form
       .comment_btn.show_comment_form

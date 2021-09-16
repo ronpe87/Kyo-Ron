@@ -127,28 +127,33 @@ document.addEventListener('DOMContentLoaded', () => {
   $('.comments_container').on('click', '.card_detail_delete', function() {
     $(this).parents('.comment_detail').remove();
   });
+
   $('.comments_signal_blue').on('click', () => {
-    // if ($(comment.content).length) {
     $('.card_blue').removeClass('hidden')
+    $('.card_yellow').addClass('hidden')
+    $('.card_red').addClass('hidden')
     $('.all').addClass('hidden')
-    // $('.comments_signal_blue').children('p')
-    // } else {
-            // }
+    $('.blue').removeClass('hidden')
+    $('.yellow').addClass('hidden')
+    $('.red').addClass('hidden')
+  })
 
-            // if (comment.content == null) {
-              // $('.comment_detail').addClass('hidden')
-            //   window.alert(comment.content)
-            // }
+  $('.comments_signal_yellow').on('click', () => {
+    $('.card_yellow').removeClass('hidden')
+    $('.card_blue').addClass('hidden')
+    $('.card_red').addClass('hidden')
+    $('.all').addClass('hidden')
+    $('.yellow').removeClass('hidden')
+    $('.blue').addClass('hidden')
+    $('.red').addClass('hidden')
+  })
 
-
-  // $('.comments_container').on('click', '.comments_user_name', function() {
-  // const commentId = $(this).attr('id');
-  // const commentdataset = $('#comment_user').data()
-  // const Current = $(commentdataset).attr('userId');
-  //   if (commentId == Current) {
-  //     window.alert('一致')
-  //   } else {
-  //     console.log(commentId)
-  //   }
-  // })
-})
+  $('.comments_signal_red').on('click', () => {
+    $('.card_red').removeClass('hidden')
+    $('.card_yellow').addClass('hidden')
+    $('.card_blue').addClass('hidden')
+    $('.all').addClass('hidden')
+    $('.red').removeClass('hidden')
+    $('.yellow').addClass('hidden')
+    $('.blue').addClass('hidden')
+  })
