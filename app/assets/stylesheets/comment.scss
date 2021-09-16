@@ -20,8 +20,9 @@
 }
 
 .comments_container {
-  margin-top: 24px;
+  margin-top: 8px;
   margin-bottom: 64px;
+  margin-right: 0px;
 }
 
 .comment_detail {
@@ -45,6 +46,29 @@
     margin: 0px 8px;
     padding: 0px 4px;
     border-radius: 4px;
+  }
+}
+
+.comments_signal {
+  display: flex;
+  justify-content: flex-end;
+
+  &_blue {
+    img {
+      height: 32px;
+    }
+  }
+
+  &_yellow {
+    img {
+      height: 32px;
+    }
+  }
+
+  &_red {
+    img {
+      height: 32px;
+    }
   }
 }
 

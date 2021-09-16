@@ -1,8 +1,24 @@
 .container
   = render 'commons/opinion', opinion: @opinion
   - if user_signed_in?
-    .comment#opinion_show{data: {opinion_id: @opinion.id, user_id: current_user.id}}
+    .comment#opinion_show{data: {opinion_id: @opinion.id, user_id: current_user.id, comments: @comments}}
   .comments_container
+    .comments_signal
+      .comments_signal_blue
+        = image_tag 'signal_blue.png'
+      .comments_signal_yellow
+        = image_tag 'signal_yellow.png'
+      .comments_signal_red
+        = image_tag 'signal_red.png'
+    .card_blue.hidden
+      - @comments.each do |comment|
+        = render 'commons/comment', comment: comment
+    .card_yellow.hidden
+      - @comments.each do |comment|
+        = render 'commons/comment', comment: comment
+    .card_red.hidden
+      - @comments.each do |comment|
+        = render 'commons/comment', comment: comment
   - if user_signed_in? && !current_user.has_written?(@opinion)
     .comment_form
       .comment_btn.show_comment_form

@@ -48,7 +48,7 @@ const handleCommentForm = () => {
 
 const appendNewComment = (comment) => {
   $('.comments_container').append(
-    `<div class="comment_detail">
+    `<div class="comment_detail all">
       <div class="comment_content">
         <div class="comment_content_signal blue">
           <p>${comment.content}</p>
@@ -95,6 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // if (Current == commentUserId) {
         $('[id*=' + Current + ']').removeClass('hidden')
         // }
+
+        })
       })
     })
 
@@ -125,6 +127,20 @@ document.addEventListener('DOMContentLoaded', () => {
   $('.comments_container').on('click', '.card_detail_delete', function() {
     $(this).parents('.comment_detail').remove();
   });
+  $('.comments_signal_blue').on('click', () => {
+    // if ($(comment.content).length) {
+    $('.card_blue').removeClass('hidden')
+    $('.all').addClass('hidden')
+    // $('.comments_signal_blue').children('p')
+    // } else {
+            // }
+
+            // if (comment.content == null) {
+              // $('.comment_detail').addClass('hidden')
+            //   window.alert(comment.content)
+            // }
+
+
   // $('.comments_container').on('click', '.comments_user_name', function() {
   // const commentId = $(this).attr('id');
   // const commentdataset = $('#comment_user').data()

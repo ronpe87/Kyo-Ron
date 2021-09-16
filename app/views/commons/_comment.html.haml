@@ -1,0 +1,15 @@
+- if comment.content.present?
+  .comment_detail
+    .comment_content
+      .comment_content_signal.blue
+        %p= comment.content
+    .comments_user
+      .comments_user_flex
+        .comments_user_avatar
+          = image_tag comment.user.avatar_image
+        .comments_user_name
+          = comment.user.username
+        .delete-space
+          - if comment.user.id == current_user.id
+            .card_detail_delete
+              = image_tag 'delete.png'
