@@ -1,8 +1,12 @@
 .card
   .card_title
     = opinion.title
-  .card_content
-    = opinion.content
+  - if current_page?(root_path)
+    .card_content.index
+      = opinion.content
+  - else
+    .card_content
+      = opinion.content
   .card_detail
     .card_detail_author_image
       = link_to account_path(opinion.user) do
