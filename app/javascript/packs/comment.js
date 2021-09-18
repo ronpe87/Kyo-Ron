@@ -95,8 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // if (Current == commentUserId) {
         $('[id*=' + Current + ']').removeClass('hidden')
         // }
-
-        })
       })
     })
 
@@ -168,3 +166,4 @@ document.addEventListener('DOMContentLoaded', () => {
     $('.red').removeClass('hidden')
     $('.card_signal').addClass('hidden')
   })
+})
