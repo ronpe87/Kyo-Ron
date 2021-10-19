@@ -55,6 +55,14 @@ class User < ApplicationRecord
     end
   end
 
+  def avatar_comment_image
+    if object.avatar_image != 'default-avatar.png'
+      rails_blob_path(object.avatar_image) # if object.avatar_image.attachment
+    else
+      'default-avatar.png' #jsにてimg srcで表示させようとしているのに/assets/を前につけなかったから動作しなかった。フォルダ指定必須。
+    end
+  end
+
   # 以下を追加
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
