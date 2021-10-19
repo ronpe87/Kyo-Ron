@@ -63,7 +63,7 @@ const appendNewComment = (comment) => {
       <div class="comments_user">
         <div class="comments_user_flex">
           <div class="comments_user_avatar">
-            <img src="${comment.user.avatar_comment_image}">
+            <img src="${comment.user.avatar_image}">
           </div>
           <div class="comments_user_name">${comment.user.username}</div>
           <div class="delete-space">
