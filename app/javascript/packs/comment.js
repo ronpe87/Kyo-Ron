@@ -68,7 +68,7 @@ const appendNewComment = (comment) => {
           <div class="comments_user_name">${comment.user.username}</div>
           <div class="delete-space">
             <div class="card_detail_delete hidden" id="${comment.user.id}">
-              <a href="/opinions/opinion_id/comments/${comment.id}" data-method="delete" data-confirm="コメントを削除してもよろしいですか?"><img src="delete.png"></a>
+              <a href="/opinions/opinion_id/comments/${comment.id}" data-method="delete" data-confirm="コメントを削除してもよろしいですか?"><img src="/delete.png"></a>
             </div>
           </div>
         </div>
