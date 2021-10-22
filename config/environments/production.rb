@@ -62,7 +62,8 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  host = 'https://kyo-ron.herokuapp.com/'
+  # host = 'https://kyo-ron.herokuapp.com/'
+  host = 'http://kyo-ron.com'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
     :user_name => ENV['SENDGRID_USERNAME'],
