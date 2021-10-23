@@ -1,5 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  host = 'http://kyo-ron.com'
   Rails.application.routes.default_url_options[:host] = host
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -63,7 +64,7 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   # host = 'https://kyo-ron.herokuapp.com/'
-  host = 'http://kyo-ron.com'
+
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
     :user_name => ENV['SENDGRID_USERNAME'],
