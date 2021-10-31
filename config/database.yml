@@ -19,13 +19,21 @@ default: &default
   encoding: utf8
   username: root
   password:
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
 
 development:
-  <<: *default
-  database: Kyo_Ron_development
+  # <<: *default
+  # database: Kyo_Ron_development
+  adapter: mysql2
+  encoding: utf8
+  database: <%= ENV['DATABASE_DEV_NAME'] %>
+  pool: 5
+  username: <%= ENV['DATABASE_DEV_USER'] %>
+  password: <%= ENV['DATABASE_DEV_PASSWORD'] %>
+  host: <%= ENV['DATABASE_DEV_HOST'] %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
