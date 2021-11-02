@@ -8,6 +8,11 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", :rel => "stylesheet"}/
+    /= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    /= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    /%script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"}
+    /%link{:crossorigin => "anonymous", :href => "https://use.fontawesome.com/releases/v5.8.2/css/all.css", :integrity => "sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay", :rel => "stylesheet"}/
   %body
     - if !current_page?(new_user_session_path) && !current_page?(new_user_registration_path)
       %header.header
