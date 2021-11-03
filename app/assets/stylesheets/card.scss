@@ -42,6 +42,7 @@
 
     &_author {
       margin-right: 8px;
+      margin-top: 16px;
 
       &_image {
         img {
@@ -56,6 +57,10 @@
         height: 24px;
         width: 24px;
       }
+    }
+
+    &_created {
+      margin-top: 16px;
     }
   }
 }
