@@ -1,7 +1,7 @@
 .card
   .card_title
     = opinion.title
-  - if current_page?(root_path)
+  - unless current_page?(opinion_path(opinion))
     .card_content.index
       = opinion.content
   - else

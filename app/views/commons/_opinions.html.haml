@@ -1,9 +1,15 @@
 .container
+  .search
+    = search_form_for @q do |f|
+      = f.label :title, "キーワード検索"
+      = f.search_field :title_cont
+      = f.submit "検索"
   - @opinions.each do |opinion|
     = link_to opinion_path(opinion) do
       = render 'commons/opinion', opinion: opinion
-  .pagenate
-    = paginate @opinions
+  - if current_page?(root_path)
+    .pagenate
+      = paginate @opinions
   = link_to new_opinion_path do
     .float_btn.new_opinion
       = image_tag 'opinion.png'
