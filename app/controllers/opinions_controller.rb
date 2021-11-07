@@ -3,7 +3,9 @@ class OpinionsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :show]
 
   def index
-    @opinions = Opinion.all.page(params[:page]).per(5)
+    # @opinions = Opinion.all.page(params[:page]).per(5)
+    @q = Opinion.ransack(params[:q]) #ransackメソッドは検索ヘルパーメソッド
+    @opinions = @q.result(distinct: true).includes(:user).page(params[:page]).per(5) #resultメソッドは検索結果を返すヘルパーメソッド。distinct: trueは、重複する検索結果を除外する役割を持つ。
   end
 
   def show
