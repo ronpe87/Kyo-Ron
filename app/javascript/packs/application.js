@@ -19,3 +19,25 @@ require("chartkick/chart.js")
 
 require("trix")
 require("@rails/actiontext")
+
+import $ from 'jquery'
+import axios from 'axios'
+import { csrfToken } from 'rails-ujs'
+
+axios.defaults.headers.common['X-CSRF-Token'] = csrfToken()
+
+document.addEventListener('DOMContentLoaded', () => {
+  $('.darkmode').on('click', () => {
+    $('.darkmode').addClass('hidden')
+    $('.lightmode').removeClass('hidden')
+    $('body').addClass('dark_color')
+    $('.header').addClass('dark_color')
+  })
+
+  $('.lightmode').on('click', () => {
+    $('.lightmode').addClass('hidden')
+    $('.darkmode').removeClass('hidden')
+    $('body').removeClass('dark_color')
+    $('.header').removeClass('dark_color')
+  })
+})

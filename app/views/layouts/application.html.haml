@@ -15,6 +15,11 @@
         .header_title
           = link_to '共論', root_path
         .header_right
+          .mode
+            .lightmode.hidden
+              = image_tag 'lightmode.png'
+            .darkmode
+              = image_tag 'darkmode.png'
           - if user_signed_in?
             - if current_page?(profile_path)
               .timeline-btn
