@@ -8,5 +8,9 @@
       = f.label :bio, '自己紹介'
     %div
       = f.text_area :bio
+    %div
+      = f.label :theme, 'テーマ'
+    %div
+      = f.select :theme, Profile.themes.keys, {}, { class: 'text' }
     .btn-submit
       = f.submit '保存', class: 'btn-primary'

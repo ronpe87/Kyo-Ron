@@ -25,7 +25,8 @@ class ProfilesController < ApplicationController
   def profile_params
     params.fetch(:profile, {}).permit(
       :bio,
-      :avatar
+      :avatar,
+      :theme
     )
   end
 end
