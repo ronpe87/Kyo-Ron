@@ -15,12 +15,8 @@
         .header_title
           = link_to '共論', root_path
         .header_right
-          .mode
-            .lightmode.hidden
-              = image_tag 'lightmode.png'
-            .darkmode
-              = image_tag 'darkmode.png'
           - if user_signed_in?
+            #theme_data{data: {user_theme: current_user.profile&.theme}}
             - if current_page?(profile_path)
               .timeline-btn
                 = link_to 'タイムライン', timeline_path
@@ -34,13 +30,21 @@
             .guest
               = link_to 'ゲスト', users_guest_sign_in_path, method: :post
             .login_btn
-              = link_to 'ログイン', new_user_session_path, class: 'header_loginBtn'
+              = link_to 'ログイン', new_user_session_path
     - if flash.present?
       .flash
         - flash.each do |key, value|
           %div{:class => key}= value
     - if !current_page?(root_path)
       .float_btn.back
-        = link_to 'javascript:history.back()' do
-          = image_tag 'back.png'
+        - if user_signed_in?
+          - if current_user.profile&.theme == 'dark'
+            = link_to 'javascript:history.back()' do
+              = image_tag 'w-back.png'
+          - else
+            = link_to 'javascript:history.back()' do
+              = image_tag 'back.png'
+        - else
+          = link_to 'javascript:history.back()' do
+            = image_tag 'back.png'
     = yield

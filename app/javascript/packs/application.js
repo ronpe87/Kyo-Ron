@@ -27,17 +27,14 @@ import { csrfToken } from 'rails-ujs'
 axios.defaults.headers.common['X-CSRF-Token'] = csrfToken()
 
 document.addEventListener('DOMContentLoaded', () => {
-  $('.darkmode').on('click', () => {
-    $('.darkmode').addClass('hidden')
-    $('.lightmode').removeClass('hidden')
-    $('body').addClass('dark_color')
-    $('.header').addClass('dark_color')
-  })
-
-  $('.lightmode').on('click', () => {
-    $('.lightmode').addClass('hidden')
-    $('.darkmode').removeClass('hidden')
-    $('body').removeClass('dark_color')
-    $('.header').removeClass('dark_color')
-  })
+  const theme_data = $('#theme_data').data()
+  const theme = theme_data.userTheme
+  if (theme == 'dark') {
+    $('body, .header, .comment_form').addClass('dark_color')
+    $('.header_title').children('a:link').css('color','white')
+    $('.timeline-btn').children('a:link').css('color', 'white')
+    $('.label, .profilePage').addClass('dark_font')
+    $('.profilePage_count_followings_num').children('a:link').css('color', 'white')
+    $('.profilePage_count_followers_num').children('a:link').css('color', 'white')
+  }
 })
