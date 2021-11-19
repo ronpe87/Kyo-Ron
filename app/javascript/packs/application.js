@@ -19,3 +19,21 @@ require("chartkick/chart.js")
 
 require("trix")
 require("@rails/actiontext")
+
+import $ from 'jquery'
+import axios from 'axios'
+import { csrfToken } from 'rails-ujs'
+
+axios.defaults.headers.common['X-CSRF-Token'] = csrfToken()
+
+document.addEventListener('DOMContentLoaded', () => {
+  const theme_data = $('#theme_data').data()
+  const theme = theme_data.userTheme
+  if (theme == 'dark') {
+  //   $('.label').addClass('dark_font')
+  // }
+  // if ($('body').has('dark_color')){
+    $('.header_title').children('a:link').css('color', 'white')
+    $('.label').addClass('dark_font')
+  }
+})

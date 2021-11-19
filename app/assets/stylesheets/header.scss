@@ -11,12 +11,6 @@
   background-color: white;
   z-index: 2;
 
-  &_loginBtn {
-    border-radius: 8px;
-    font-size: 12px;
-    margin-top: 16px;
-  }
-
   &_title {
     margin-left: 0px;
     margin-top: 4px;
@@ -47,9 +41,10 @@
 
 .login_btn {
   margin-top: 8px;
+  padding-top: 2px;
   height: 24px;
-  width: 48px;
-  font-size: 14px;
+  width: 56px;
+  font-size: 13px;
   text-align: center;
   border: 1px solid ;
   border-radius: 4px;
@@ -71,4 +66,18 @@
 
 .flash {
   height: 0px;
+}
+
+.mode {
+  margin-right: 16px;
+  padding-top: 8px;
+
+  img {
+    height: 32px;
+    width: 32px;
+  }
+}
+
+.lightmode {
+  text-align: right;
 }

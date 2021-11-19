@@ -39,10 +39,18 @@ a {
 }
 
 
-a:visited{
+a:visited {
   color: black;
 }
 
-a:link{
+a:link {
   color: black;
+}
+
+.dark_color {
+  background-color: #333333;
+}
+
+.dark_font {
+  color: white;
 }

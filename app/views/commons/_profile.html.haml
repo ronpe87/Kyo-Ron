@@ -1,5 +1,5 @@
 .container
-  .profilePage
+  .profilePage{class: ('dark_font' if current_user.profile&.theme == 'dark')}
     .profilePage_image
       = image_tag user.avatar_image, class: 'icon'
     .profilePage_name

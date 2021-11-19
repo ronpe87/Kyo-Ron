@@ -4,11 +4,11 @@
       %li= message
   = form_with(model: @opinion, url: opinions_path, method: 'post', local: true) do |f|
     %div
-      = f.label :title, 'タイトル'
+      = f.label :title, 'タイトル', class: 'label'
     %div
       = f.text_field :title, class: 'text'
     %div
-      = f.label :content, '内容'
+      = f.label :content, '内容', class: 'label'
     %div
       = f.rich_text_area :content, class: 'ric'
     .btn-submit

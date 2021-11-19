@@ -1,4 +1,4 @@
-input {
+input, select {
   &.text {
     width: 99%;
     margin: 8px 0px;
@@ -20,8 +20,12 @@ textarea, trix-editor {
   border: 2px solid #EBEBEB;
 }
 
+.trix-button-group {
+  background-color: white;
+}
+
 .ric {
-  width: 94%;
+  background-color: white;
 }
 
 .sign {
