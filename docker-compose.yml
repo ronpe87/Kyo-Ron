@@ -11,6 +11,8 @@ services:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_USER: ron
       MYSQL_PASSWORD: tenten2
+    volumes:
+      - mysql-data:/var/lib/mysql #dbのデータを永続化しておく
 
   web:
     build:
@@ -24,4 +26,25 @@ services:
     ports:
       - "3000:3000" # ホストからゲストへポートフォワード
     volumes:
-      - .:/Kyo-Ron # ソースコード変更したらDocker側も即反映されるように
+      - .:/Kyo-Ron:cached # ソースコード変更したらDocker側も即反映されるように
+      - tmp-data:/Kyo-Ron/tmp/sockets #ソケット通信用ファイルをnginxコンテナと共有
+      - public-data:/Kyo-Ron/public #画像データとかをnginxと共有
+
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    restart: always #明示的にstopさせるまでリスタートする。（失敗するたび遅延あり）
+    volumes:
+      - tmp-data:/Kyo-Ron/tmp/sockets
+      - public-data:/Kyo-Ron/public
+    depends_on:
+      - web
+
+volumes:
+  public-data:
+  tmp-data:
+  mysql-data:
+
