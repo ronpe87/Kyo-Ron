@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.6'
+ruby '>= 2.6.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.6'
@@ -39,6 +39,7 @@ gem 'sendgrid-ruby'
 gem 'chartkick'
 gem 'kaminari'
 gem 'ransack'
+gem 'unicorn', '5.4.1' # バージョン指定
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -71,7 +72,6 @@ end
 
 # 追記（本番環境）
 group :production do
-  gem 'unicorn', '5.4.1' # バージョン指定
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
