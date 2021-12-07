@@ -44,4 +44,4 @@ workflows:
       - build
       - test:
         requires:
-          - build #buildが終わってから実行
+          - build #buildが終わってから実行。
