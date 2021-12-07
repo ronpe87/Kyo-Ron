@@ -12,7 +12,7 @@ services:
       MYSQL_USER: ron
       MYSQL_PASSWORD: tenten2
     volumes:
-      - mysql-data:/var/lib/mysql #dbのデータを永続化しておく
+      - mysql-data:/var/lib/mysql #削除してもdbのデータが消えなくなる
 
   web:
     build:

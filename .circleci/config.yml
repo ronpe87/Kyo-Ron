@@ -1,0 +1,47 @@
+version: 2.1 # CircleCIのバージョンのこと
+
+orbs:
+  ruby: circleci/ruby@1.1.2
+
+jobs: # 実行処理の単位
+  build:
+    docker: # DockerでRubyのイメージを作成。Dockerfileとversionを合わせる。
+      - image: circle/ruby:2.6.6
+    steps:
+      - checkout: #gitリポジトリからソースコードをcheckout
+        path: ~/Kyo-Ron
+      - ruby/install-deps #bundle install
+
+  test:
+    docker:
+      - image: circleci/ruby:2.6.6
+      - image: circleci/mysql:5.5
+        environment:
+          MYSQL_DATABASE: Kyo-Ron_test
+          MYSQL_ROOT_PASSWORD: password
+          MYSQL_USER: ron
+          MYSQL_PASSWORD: tenten2
+    environment:
+      BUNDLE_JOBS: "3"
+      BUNDLE_RETRY: "3"
+      APP_DATABASE_HOST: "127.0.0.1" #自分のCPという意味
+      RAILS_ENV: test
+    steps:
+      - checkout:
+        path: ~/Kyo-Ron
+      - ruby/install-deps #bundle install
+      - run:
+        name: Database setup
+        command: bundle exec rails db:migrate
+      - run:
+        name: test
+        command: bundle exec rake test
+
+workflows:
+  version: 2
+  build_test:
+    jobs:
+      - build
+      - test:
+        requires:
+          - build #buildが終わってから実行
