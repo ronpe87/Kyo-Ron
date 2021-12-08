@@ -20,7 +20,8 @@ jobs: # 実行処理の単位
         environment:
           MYSQL_DATABASE: Kyo-Ron_test
           MYSQL_ROOT_PASSWORD: password
-          MYSQL_USER: root
+          MYSQL_USER: ron
+          MYSQL_PASSWORD: tenten2
     environment:
       BUNDLE_JOBS: "3"
       BUNDLE_RETRY: "3"
