@@ -10,7 +10,7 @@ jobs: # 実行処理の単位
     working_directory: ~/Kyo-Ron
     steps:
       - checkout: #gitリポジトリからソースコードをcheckout
-        path: ~/Kyo-Ron
+          path: ~/Kyo-Ron
       - ruby/install-deps #bundle install
 
   test:
@@ -20,8 +20,7 @@ jobs: # 実行処理の単位
         environment:
           MYSQL_DATABASE: Kyo-Ron_test
           MYSQL_ROOT_PASSWORD: password
-          MYSQL_USER: ron
-          MYSQL_PASSWORD: tenten2
+          MYSQL_USER: root
     environment:
       BUNDLE_JOBS: "3"
       BUNDLE_RETRY: "3"
@@ -30,14 +29,14 @@ jobs: # 実行処理の単位
     working_directory: ~/Kyo-Ron
     steps:
       - checkout:
-        path: ~/Kyo-Ron
+          path: ~/Kyo-Ron
       - ruby/install-deps #bundle install
       - run:
-        name: Database setup
-        command: bundle exec rails db:migrate
+          name: Database setup
+          command: bundle exec rails db:migrate
       - run:
-        name: test
-        command: bundle exec rake test
+          name: test
+          command: bundle exec rake test
 
 workflows:
   version: 2
@@ -45,5 +44,5 @@ workflows:
     jobs:
       - build
       - test:
-        requires:
-          - build #buildが終わってから実行。
+          requires:
+            - build #buildが終わってから実行。
