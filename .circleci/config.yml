@@ -7,6 +7,7 @@ jobs: # 実行処理の単位
   build:
     docker: # DockerでRubyのイメージを作成。Dockerfileとversionを合わせる。
       - image: circle/ruby:2.6.6
+    working_directory: ~/Kyo-Ron
     steps:
       - checkout: #gitリポジトリからソースコードをcheckout
         path: ~/Kyo-Ron
@@ -26,6 +27,7 @@ jobs: # 実行処理の単位
       BUNDLE_RETRY: "3"
       APP_DATABASE_HOST: "127.0.0.1" #自分のCPという意味
       RAILS_ENV: test
+    working_directory: ~/Kyo-Ron
     steps:
       - checkout:
         path: ~/Kyo-Ron
