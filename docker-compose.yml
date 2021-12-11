@@ -23,12 +23,17 @@ services:
     stdin_open: true
     depends_on:
       - db # DB側のコンテナが出来上がってからwebを実行する
+      - chrome
     ports:
       - "3000:3000" # ホストからゲストへポートフォワード
     volumes:
       - .:/Kyo-Ron:cached # ソースコード変更したらDocker側も即反映されるように
       - tmp-data:/Kyo-Ron/tmp/sockets #ソケット通信用ファイルをnginxコンテナと共有
       - public-data:/Kyo-Ron/public #画像データとかをnginxと共有
+  chrome:
+    image: selenium/standalone-chrome:latest
+    ports:
+      - 4444:4444
 
   nginx:
     build:
