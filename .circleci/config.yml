@@ -36,8 +36,8 @@ jobs: # 実行処理の単位
           name: Database setup
           command: bundle exec rails db:migrate
       - run:
-          name: test
-          command: bundle exec rake test
+          name: RSpec
+          command: bundle exec rspec
 
 workflows:
   version: 2
