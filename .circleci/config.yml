@@ -6,7 +6,7 @@ orbs:
 jobs: # 実行処理の単位
   build:
     docker: # DockerでRubyのイメージを作成。Dockerfileとversionを合わせる。
-      - image: circle/ruby:2.6.6
+      - image: circleci/ruby:2.6.6
     working_directory: ~/Kyo-Ron
     steps:
       - checkout: #gitリポジトリからソースコードをcheckout
