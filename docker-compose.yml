@@ -13,6 +13,23 @@ services:
       MYSQL_PASSWORD: tenten2
     volumes:
       - mysql-data:/var/lib/mysql #削除してもdbのデータが消えなくなる
+  redis:
+    image: "redis:latest"
+    ports:
+      - "6379:6379"
+    volumes:
+      - "./data/redis:/data"
+  sidekiq:
+    build: .
+    command: bundle exec sidekiq
+    volumes:
+      - .:/app
+      - bundle_data:/usr/local/bundle
+    depends_on:
+      - db
+      - redis
+    environment:
+      REDIS_URL: redis://redis:6379
 
   web:
     build:
@@ -23,7 +40,10 @@ services:
     stdin_open: true
     depends_on:
       - db # DB側のコンテナが出来上がってからwebを実行する
+      - redis
       - chrome
+    environment:
+      REDIS_URL: redis://redis:6379
     ports:
       - "3000:3000" # ホストからゲストへポートフォワード
     volumes:
@@ -52,4 +72,6 @@ volumes:
   public-data:
   tmp-data:
   mysql-data:
+  bundle_data:
+  redis:
 
