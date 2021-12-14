@@ -97,3 +97,7 @@ production:
   # database: Kyo_Ron_production
   # username: Kyo_Ron
   # password: <%= ENV['KYO_RON_DATABASE_PASSWORD'] %>
+  database: <%= Rails.application.credentials.db[:database] %>
+  username: <%= Rails.application.credentials.db[:username] %>
+  password: <%= Rails.application.credentials.db[:password] %>
+  socket: <%= Rails.application.credentials.db[:socket] %>
