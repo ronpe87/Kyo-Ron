@@ -29,3 +29,6 @@ RUN yarn install --check-files
 RUN bundle install
 
 ADD . /Kyo-Ron
+
+ARG RAILS_MASTER_KEY
+ENV RAILS_MASTER_KEY ${RAILS_MASTER_KEY}

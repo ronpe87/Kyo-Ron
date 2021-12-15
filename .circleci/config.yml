@@ -82,3 +82,9 @@ jobs:
       - run:
           name: docker-compose down
           command: docker-compose down
+
+workflows:
+  build-and-deploy:
+    jobs:
+      - aws-ecr/build-and-push-image:
+        extra-build-args: '--build-arg RAILS_MASTER_KEY=${RAILS_MASTER_KEY}'
