@@ -59,9 +59,6 @@ jobs:
   build:
     machine:
       image: circleci/classic:edge
-        env:
-          RAILS_ENV: test
-          RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
     steps:
       - checkout
       - run:
