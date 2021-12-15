@@ -71,10 +71,10 @@ jobs:
           name: sleep for waiting launch db
           command: sleep 10
       - run:
-          name: データベースの作成
+          name: create
           command: docker-compose run web rails db:create RAILS_ENV=test
       - run:
-          name: データベースのセットアップ
+          name: migrate
           command: docker-compose run web rails db:migrate RAILS_ENV=test
       - run:
           name: test
