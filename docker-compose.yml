@@ -74,4 +74,3 @@ volumes:
   mysql-data:
   bundle_data:
   redis:
-
