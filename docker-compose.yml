@@ -7,7 +7,6 @@ services:
       - '3306:3306' # ホストからゲストへポートフォワード
     command: --default-authentication-plugin=mysql_native_password
     environment:
-      MYSQL_DATABASE: Kyo-Ron_development
       MYSQL_ROOT_PASSWORD: password
       MYSQL_USER: ron
       MYSQL_PASSWORD: tenten2
