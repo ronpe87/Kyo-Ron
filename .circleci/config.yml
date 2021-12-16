@@ -72,10 +72,10 @@ jobs:
           command: sleep 10
       - run:
           name: create
-          command: docker-compose run web rails db:create RAILS_ENV=test
+          command: docker-compose run web rails db:create
       - run:
           name: migrate
-          command: docker-compose run web rails db:migrate RAILS_ENV=test
+          command: docker-compose run web rails db:migrate
       - run:
           name: test
           command: docker-compose run web rspec
