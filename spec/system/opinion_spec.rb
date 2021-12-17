@@ -11,10 +11,10 @@ RSpec.describe 'Opinion', type: :system do
     end
   end
 
-  it '投稿詳細を表示できる' do
+  it 'ログイン後、投稿詳細を表示できる' do
+    sign_in user
     visit root_path
 
-    page.first(".guest").click
     opinion = opinions.first
     click_on opinion.title
 
