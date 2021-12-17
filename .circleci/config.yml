@@ -62,11 +62,11 @@ jobs:
     steps:
       - checkout
       - run:
-          name: yarn Install
-          command: yarn install
-      - run:
           name: docker-compose build
           command: docker-compose build
+      - run:
+          name: docker-compose yarn install --cache-files
+          command: docker-compose run --rm web yarn install --cache-files
       - run:
           name: docker-compose up
           command: docker-compose up -d
