@@ -23,7 +23,7 @@
             - else
               .dropdown
                 = image_tag current_user.avatar_image
-                .dropdown_content
+                .dropdown_content.hidden
                   = link_to 'プロフィール', profile_path, class: 'log_out'
                   = link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete' }, class: 'log_out'
           - else

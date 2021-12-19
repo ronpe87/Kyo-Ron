@@ -36,4 +36,14 @@ document.addEventListener('DOMContentLoaded', () => {
     $('.header_title').children('a:link').css('color', 'white')
     $('.label').addClass('dark_font')
   }
+
+  $(document).on('click', function (e) {
+    if (!$(e.target).closest('.dropdown').length) {
+      $('.dropdown_content').addClass('hidden')
+      // ターゲット要素の外側をクリックした時の操作
+    } else {
+      $('.dropdown_content').removeClass('hidden')
+      // ターゲット要素をクリックした時の操作
+    }
+  });
 })
