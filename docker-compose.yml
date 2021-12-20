@@ -13,12 +13,25 @@ services:
       MYSQL_PASSWORD: tenten2
     volumes:
       - mysql-data:/var/lib/mysql #削除してもdbのデータが消えなくなる
+
+  webpacker:
+    build: .
+    environment:
+      NODE_ENV: development
+      RAILS_ENV: development
+      WEBPACKER_DEV_SERVER_HOST: 0.0.0.0
+    command: ./bin/webpack-dev-server
+    ports:
+      - '3035:3035'
+
   redis:
-    image: "redis:latest"
+    image: redis
+    command: redis-server --appendonly yes
     ports:
       - "6379:6379"
     volumes:
-      - "./data/redis:/data"
+      - redis:/var/lib/redis/data
+
   sidekiq:
     build: .
     command: bundle exec sidekiq
@@ -44,6 +57,7 @@ services:
       - chrome
     environment:
       REDIS_URL: redis://redis:6379
+      WEBPACKER_DEV_SERVER_HOST: webpacker
     ports:
       - "3000:3000" # ホストからゲストへポートフォワード
     volumes:
