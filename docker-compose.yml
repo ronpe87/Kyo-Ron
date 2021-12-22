@@ -11,7 +11,7 @@ services:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_USER: ron
       MYSQL_PASSWORD: tenten2
-      RAILS_MASTER_KEY: ${RAILS_MASTER_KEY}
+      # RAILS_MASTER_KEY: ${RAILS_MASTER_KEY}
     volumes:
       - mysql-data:/var/lib/mysql #削除してもdbのデータが消えなくなる
 

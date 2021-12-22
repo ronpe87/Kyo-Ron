@@ -28,7 +28,7 @@ RUN gem install bundler
 RUN yarn install --check-files
 RUN bundle install
 
-ARG RAILS_MASTER_KEY
-ENV RAILS_MASTER_KEY ${RAILS_MASTER_KEY}
+# ARG RAILS_MASTER_KEY
+# ENV RAILS_MASTER_KEY ${RAILS_MASTER_KEY}
 
 ADD . /Kyo-Ron
