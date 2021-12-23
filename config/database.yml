@@ -94,7 +94,7 @@ test:
 #
 production:
   <<: *default
-  database:
+  database: Kyo-Ron
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
