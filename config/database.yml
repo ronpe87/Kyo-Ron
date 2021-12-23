@@ -17,7 +17,7 @@
 default: &default
   adapter: mysql2
   encoding: utf8
-  # username: root
+  username: root
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
@@ -72,7 +72,6 @@ test:
   <<: *default
   database: Kyo-Ron_test
   host: <%= ENV.fetch("APP_DATABASE_HOST") { 'db' } %>
-  username: root
   password: password
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -95,12 +94,10 @@ test:
 #
 production:
   <<: *default
+  database:
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
   # database: Kyo_Ron_production
   # username: Kyo_Ron
   # password: <%= ENV['KYO_RON_DATABASE_PASSWORD'] %>
-  <% if Rails.application.credentials.database.present? %>
-    database: <%= Rails.application.credentials.db[:database] %>
-    username: <%= Rails.application.credentials.db[:username] %>
-    password: <%= Rails.application.credentials.db[:password] %>
-    socket: <%= Rails.application.credentials.db[:socket] %>
-  <% end %>
