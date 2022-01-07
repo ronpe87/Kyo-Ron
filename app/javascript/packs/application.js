@@ -31,7 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const theme = theme_data.userTheme
   if (theme == 'dark') {
     $('.header_title').children('a:link').css('color', 'white')
-    $('.label').addClass('dark_font')
+  } else {
+    $('.label').css('color', 'black')
   }
 
   $(document).on('click', function (e) {
