@@ -94,9 +94,10 @@ test:
 #
 production:
   <<: *default
-  database: Kyo-Ron_production
+  database:
   # host: <%= ENV.fetch("APP_DATABASE_HOST") { 'db' } %>
   # password: password
+  username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
   # database: Kyo_Ron_production
