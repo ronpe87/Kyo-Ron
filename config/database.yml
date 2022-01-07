@@ -94,7 +94,7 @@ test:
 #
 production:
   <<: *default
-  database:
+  database: Kyo-Ron_production
   # host: <%= ENV.fetch("APP_DATABASE_HOST") { 'db' } %>
   # password: password
   username: root
