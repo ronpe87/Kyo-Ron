@@ -10,6 +10,11 @@
   padding: 10px 16px;
   background-color: white;
   z-index: 2;
+  background-color: #fff;
+  background-image:
+    linear-gradient(-90deg, #EEEEEE 50%, transparent 50%),
+    linear-gradient(#EEEEEE 50%, transparent 50%);
+  background-size: 20px 20px;
 
   &_title {
     margin-left: 0px;
