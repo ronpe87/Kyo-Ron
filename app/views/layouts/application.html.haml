@@ -9,7 +9,7 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", :rel => "stylesheet"}/
-  %body{class: ('dark_color' if user_signed_in? && current_user.profile&.theme == 'dark')}
+  %body.lihgt-theme{class: ('dark_color' if user_signed_in? && current_user.profile&.theme == 'dark')}
     - if !current_page?(new_user_session_path) && !current_page?(new_user_registration_path)
       %header.header{class: ('dark_color' if user_signed_in? && current_user.profile&.theme == 'dark')}
         .header_title
