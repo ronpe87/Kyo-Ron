@@ -41,3 +41,5 @@
 * ransack (検索)
 * rspec-rails (テスト)
 * chartkick (グラフ)
+
+![ER図](https://user-images.githubusercontent.com/66545944/150345430-523c6404-3b9a-4124-93a8-aa3ea599a78a.png)
