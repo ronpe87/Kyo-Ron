@@ -11,23 +11,23 @@
 #### マーケット
 
 #### 使用技術
-  ##### バックエンド
-  * Ruby 2.6.6
-  * Rails 6.0.3
-  * RSpec
-  ##### フロントエンド
-  * JavaScript(jQuery)
-  ##### インフラ
-  * Nginx
-  * AWS
-   * EC2
-   * VPC
-   * Route53
-   * MySQL
-   * ALB
-   * ACM
-  * Nginx
-  * Unicorn
+##### バックエンド
+* Ruby 2.6.6
+* Rails 6.0.3
+* RSpec
+##### フロントエンド
+* JavaScript(jQuery)
+##### インフラ
+* Nginx
+* AWS
+ * EC2
+ * VPC
+ * Route53
+ * MySQL
+ * ALB
+ * ACM
+* Nginx
+* Unicorn
 
 #### 主要なGem
 
