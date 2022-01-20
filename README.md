@@ -16,6 +16,8 @@
 * Rails 6.0.3
 * RSpec
 #### フロントエンド
+* HTML
+* CSS(SCSS)
 * JavaScript(jQuery)
 #### インフラ
 * Nginx
@@ -29,5 +31,9 @@
 * Nginx
 * Unicorn
 
-#### 主要なGem
-
+### 主要なGem
+* devise (認証)
+* kaminari (ページネーション)
+* ransack (検索)
+* rspec-rails (テスト)
+* chartkick (グラフ)
