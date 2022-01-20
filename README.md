@@ -11,8 +11,21 @@
 #### マーケット
 
 #### 🔧使用技術
-* Ruby
-
+* Ruby 2.6.6
+* Rails 6.0.3
+* RSpec
+* JavaScript(jQuery)
+* Nginx
+  *Puma
+  *AWS
+  *VPC
+  *EC2
+  *Amazon Linux 2
+  *Route53
+  *RDS
+  *MySQL 5.7.34
+  *ALB
+  *ACM
 
 #### 主要なGem
 
