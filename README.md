@@ -16,8 +16,8 @@
 * RSpec
 * JavaScript(jQuery)
 * Nginx
- *Puma
- *AWS
+>*Puma
+>*AWS
  *VPC
  *EC2
  *Amazon Linux 2
