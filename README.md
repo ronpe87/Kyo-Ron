@@ -15,17 +15,17 @@
 * Rails 6.0.3
 * RSpec
 * JavaScript(jQuery)
+##### インフラ
 * Nginx
-  * Puma
-  * AWS
-  * VPC
-  * EC2
-  * Amazon Linux 2
-  * Route53
-  * RDS
-   * MySQL 5.7.34
-  * ALB
-  * ACM
+* AWS
+ * EC2
+ * VPC
+ * Route53
+ * MySQL
+ * ALB
+ * ACM
+* Nginx
+* Unicorn
 
 #### 主要なGem
 
