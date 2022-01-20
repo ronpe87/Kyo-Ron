@@ -1,24 +1,17 @@
-# README
+# 『共論』について
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## ユーザーが抱える課題
 
-Things you may want to cover:
+## 解決方法
 
-* Ruby version
 
-* System dependencies
+## 望む未来
 
-* Configuration
 
-* Database creation
+## マーケット
 
-* Database initialization
+## 🔧使用技術
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## 主要なGem
 
-* Deployment instructions
-
-* ...
