@@ -9,4 +9,16 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     components: { App }
   })
+
+  new Vue({
+    el: '#app1',
+    data: {
+      message: 'World'
+    },
+    methods: {
+      update() {
+        this.message = 'Vue.js'
+      }
+    }
+  })
 })
