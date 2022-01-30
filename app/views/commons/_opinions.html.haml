@@ -18,10 +18,9 @@
           = image_tag 'w-opinion.png'
         - else
           = image_tag 'opinion.png'
-  = javascript_pack_tag 'hello_vue'
-  = javascript_pack_tag 'custom_vue'
-  #hello2
-    %p {{ message }}
-  #app1
-    %p {{ message }}
-    %button{:click => "update"} change
+  -# = javascript_pack_tag 'hello_vue'
+  -# = javascript_pack_tag 'custom_vue'
+  -# #example-3
+  -#   %p Hello {{ message }} !
+  -#   %button{"v-on:click" => "say('hi')"} Say hi
+  -#   %button{"v-on:click" => "say('what')"} Say what
