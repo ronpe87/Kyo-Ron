@@ -1,6 +1,17 @@
 <%= javascript_pack_tag 'hello_vue' %>
 <%= javascript_pack_tag 'custom_vue' %>
-<div id="app">
-  Hello {{ message }} !
-  <button @click="update">change</button>
+<div id="app2">
+  <ul class="tab">
+    <li v-for="item in list"
+        @click="changeTab(item.id)"
+        @keyup.enter="changeTab(item.id)"
+        :class="{active:active(item.id)}" tabindex="0">{{ item.label }}</li>
+  </ul>
+  <div class="content-vue">
+    <transition>
+      <section v-for="item in list" :key="item.id" v-if="active(item.id)">
+        <p>{{ item.content }}</p>
+      </section>
+    </transition>
+  </div>
 </div>
