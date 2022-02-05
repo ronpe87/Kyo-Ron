@@ -65,23 +65,3 @@ a:link {
 .dark_font {
   color: white;
 }
-
-.v-enter-active, .v-leave-active {
-  transition: all .8s;
-}
-
-.v-leave-active {
-  position: absolute;
-}
-
-/* 表示されるときは左から */
-.v-enter {
-  transform: translateX(-20px);
-  opacity: 0;
-}
-
-/* 消えるときは上へ */
-.v-leave-to {
-  transform: translateY(-20px);
-  opacity: 0;
-}
