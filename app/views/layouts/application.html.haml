@@ -11,7 +11,7 @@
     %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", :rel => "stylesheet"}/
   %body.lihgt-theme{class: ('dark_color' if user_signed_in? && current_user.profile&.theme == 'dark')}
     - if !current_page?(new_user_session_path) && !current_page?(new_user_registration_path)
-      %header.header{class: ('dark_color' if user_signed_in? && current_user.profile&.theme == 'dark')}
+      %header.header
         .header_title
           = link_to '共論', root_path
         .header_right
