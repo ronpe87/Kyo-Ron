@@ -13,11 +13,12 @@
 
 
   &_title {
+    width: 100%;
     margin-left: 0px;
     margin-top: 4px;
     font-size: 24px;
     font-family: 'Sawarabi Mincho', sans-serif;
-    color: black;
+    color: rgb(0, 0, 0);
   }
 
   &_right {
@@ -49,7 +50,7 @@
   text-align: center;
   border: 1px solid ;
   border-radius: 4px;
-  background-color: #00FFFF;
+  background-color: #4285F4;
 }
 
 .guest {
