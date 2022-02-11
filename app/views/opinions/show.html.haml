@@ -28,7 +28,7 @@
           - if comment.content3.present?
             = render 'commons/comment', comment: comment
   - if user_signed_in? && !current_user.has_written?(@opinion)
-    .comment_form{class: ('dark_color' if current_user.profile&.theme == 'dark')}
+    .comment_form
       .comment_btn.show_comment_form
         - if current_user.profile&.theme == 'dark'
           = image_tag 'w-comment.png'
