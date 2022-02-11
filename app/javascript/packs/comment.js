@@ -89,12 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const comments = response.data
       comments.forEach((comment) => {
         appendNewComment(comment)
-        // const commentUserId = comment.user.id
-        // console.log(comment.user)
-        // console.log(commentUserId)
-        // if (Current == commentUserId) {
         $('[id*=' + Current + ']').removeClass('hidden')
-        // }
       })
     })
 

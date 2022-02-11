@@ -5,7 +5,7 @@
   .comments_container
     .comments_signal
       .comments_chart
-        = pie_chart @data, legend: false, width: '32px', height: '32px', colors: ['#00FFFF','#FFFF00','#FF0033']
+        = pie_chart @data, legend: false, width: '32px', height: '32px', colors: ['#bee5eb','#F9D5A7','#e04e4e']
       .comments_signal_all
         %button.all_btn All
       .comments_signal_blue
@@ -28,7 +28,7 @@
           - if comment.content3.present?
             = render 'commons/comment', comment: comment
   - if user_signed_in? && !current_user.has_written?(@opinion)
-    .comment_form{class: ('dark_color' if current_user.profile&.theme == 'dark')}
+    .comment_form
       .comment_btn.show_comment_form
         - if current_user.profile&.theme == 'dark'
           = image_tag 'w-comment.png'
