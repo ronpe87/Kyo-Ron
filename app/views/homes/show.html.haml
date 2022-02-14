@@ -1,0 +1,22 @@
+.container
+  .info
+    %p= '共論はある意見に対する賛否両論を募集するSNSです。'
+    %p= '投稿に対するコメントは「賛成」、「どちらとも言えない」、「反対」によって３色に色分けして投稿することができます。'
+    %p= '肯定的な意見や否定的な意見を視覚的にわかりやすく表示することで議論や提案がやりやすくなるのではないかと思い開発しました。'
+  .video
+    .color-change
+      = video_tag 'color-change.mp4', width: '360', autoplay: true, loop: true, muted: true, controls: true
+    .video-coment
+      %p= '・色付きの吹き出しマークをクリックすればその色のコメントのみ、表示することができます。'
+      %p= 'これによって肯定的なコメントのみ見ることや、否定的なコメントのみ見ることができます。'
+  .video
+    .dark-mode
+      = video_tag 'dark-mode.mp4', width: '360', autoplay: true, loop: true, muted: true, controls: true
+    .video-coment
+      %p= '・ユーザーマークの「プロフィール」から画面全体が黒いダークモードを選択することができます。'
+      %p= 'アカウントごとにモードが保存されるので次回ログインした時も選択したモードで始められます。'
+  .video
+    .mail-test
+      = video_tag 'mail-test.mp4', width: '360', autoplay: true, loop: true, muted: true, controls: true
+    .video-coment
+      %p= '・新規のコメントがつくとそのその投稿主が登録したメールアドレスに新着コメント通知のメールが自動送信されます。'
