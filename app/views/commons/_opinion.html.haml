@@ -10,7 +10,8 @@
   .card_detail
     .card_detail_author_image
       = link_to account_path(opinion.user) do
-        = image_tag opinion.user.avatar_image
+        .card_detail_author_image2
+          = image_tag opinion.user.avatar_image
     .card_detail_author
       %p= opinion.user.username
     .card_detail_created

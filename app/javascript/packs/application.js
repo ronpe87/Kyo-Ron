@@ -31,6 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const theme = theme_data.userTheme
   if (theme == 'dark') {
     $('.header_title').children('a:link').css('color', 'white')
+    $('label').css('color', 'white')
+    $('.dropdown').children('img').attr('src', '/assets/dark-avatar.png')
+    $('.profilePage_image').children('img').attr('src', '/assets/dark-avatar.png')
+    $('.card_detail_author_image2').children('img').attr('src', '/assets/dark-avatar.png')
   } else {
     $('.label').css('color', 'black')
   }
