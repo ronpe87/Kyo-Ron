@@ -6,8 +6,10 @@ class UserSerializer < ActiveModel::Serializer
   has_one :profile
 
   def avatar_comment_image
-    if object.avatar_image != 'light-avatar.png'
+    if object.avatar_image != ('light-avatar.png' || 'dark-avatar.png')
       rails_blob_path(object.avatar_image) # if object.avatar_image.attachment
+    elsif object.avatar_image == 'dark-avatar.png'
+      '/dark-avatar.png'
     else
       '/light-avatar.png' #jsにてimg srcで表示させようとしているのに/assets/を前につけなかったから動作しなかった。フォルダ指定必須。
     end
