@@ -32,9 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (theme == 'dark') {
     $('.header_title').children('a:link').css('color', 'white')
     $('label').css('color', 'white')
-    $('.dropdown').children('img').attr('src', '/dark-avatar.png')
-    $('.profilePage_image').children('img').attr('src', '/dark-avatar.png')
-    $('.card_detail_author_image2').children('img').attr('src', '/dark-avatar.png')
+    $('.dropdown, .profilePage_image, .card_detail_author_image2').children('img').attr('src', '/dark-avatar.png')
   } else {
     $('.label').css('color', 'black')
   }
