@@ -78,7 +78,7 @@ const appendNewComment = (comment) => {
   const theme_data = $('#theme_data').data()
   const theme = theme_data.userTheme
   if (theme == 'dark'){
-    $('img[src="/light-avatar.png"]').attr('src', '/dark-avatar.png')
+    $('img[src="/assets/light-avatar.png"]').attr('src', '/assets/dark-avatar.png')
   }
 }
 
