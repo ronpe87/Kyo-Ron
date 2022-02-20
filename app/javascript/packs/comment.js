@@ -75,6 +75,11 @@ const appendNewComment = (comment) => {
       </div>
     </div>`
   )
+  const theme_data = $('#theme_data').data()
+  const theme = theme_data.userTheme
+  if (theme == 'dark'){
+    $('img[src="/light-avatar.png"]').attr('src', '/dark-avatar.png')
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -84,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const Current = $(commentdataset).attr('userId');
 
   axios.get(`/opinions/${opinionId}/comments`)
-
     .then((response) => {
       const comments = response.data
       comments.forEach((comment) => {
@@ -122,43 +126,22 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   $('.comments_signal_blue').on('click', () => {
-    $('.card_signal').removeClass('hidden')
-    $('.card_blue').removeClass('hidden')
-    $('.card_yellow').addClass('hidden')
-    $('.card_red').addClass('hidden')
-    $('.all').addClass('hidden')
-    $('.blue').removeClass('hidden')
-    $('.yellow').addClass('hidden')
-    $('.red').addClass('hidden')
+    $('.card_signal, .card_blue, .blue').removeClass('hidden')
+    $('.card_yellow, .card_red, .all, .yellow, .red').addClass('hidden')
   })
 
   $('.comments_signal_yellow').on('click', () => {
-    $('.card_signal').removeClass('hidden')
-    $('.card_yellow').removeClass('hidden')
-    $('.card_blue').addClass('hidden')
-    $('.card_red').addClass('hidden')
-    $('.all').addClass('hidden')
-    $('.yellow').removeClass('hidden')
-    $('.blue').addClass('hidden')
-    $('.red').addClass('hidden')
+    $('.card_signal, .card_yellow, .yellow').removeClass('hidden')
+    $('.card_blue, .card_red, .all, .blue, .red').addClass('hidden')
   })
 
   $('.comments_signal_red').on('click', () => {
-    $('.card_signal').removeClass('hidden')
-    $('.card_red').removeClass('hidden')
-    $('.card_yellow').addClass('hidden')
-    $('.card_blue').addClass('hidden')
-    $('.all').addClass('hidden')
-    $('.red').removeClass('hidden')
-    $('.yellow').addClass('hidden')
-    $('.blue').addClass('hidden')
+    $('.card_signal, .card_red, .red').removeClass('hidden')
+    $('.card_yellow, .card_blue, .all, .yellow, .blue').addClass('hidden')
   })
 
   $('.comments_signal_all').on('click', () => {
-    $('.all').removeClass('hidden')
-    $('.blue').removeClass('hidden')
-    $('.yellow').removeClass('hidden')
-    $('.red').removeClass('hidden')
+    $('.all, .blue, .yellow, .red').removeClass('hidden')
     $('.card_signal').addClass('hidden')
   })
 })
