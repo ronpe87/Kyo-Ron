@@ -9,7 +9,7 @@ class UserSerializer < ActiveModel::Serializer
     if object.avatar_image != 'light-avatar.png'
       rails_blob_path(object.avatar_image) # if object.avatar_image.attachment
     else
-      '/assets/light-avatar.png' #jsにてimg srcで表示させようとしているのに/assets/を前につけなかったから動作しなかった。フォルダ指定必須。
+      '/light-avatar.png' #jsにてimg srcで表示させようとしているのに/assets/を前につけなかったから動作しなかった。フォルダ指定必須。
     end
   end
 end
