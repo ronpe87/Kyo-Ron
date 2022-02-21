@@ -10,18 +10,12 @@
         %button.all_btn All
       .comments_signal_blue
         = image_tag 'signal_blue.png'
-      .comments_signal_yellow
-        = image_tag 'signal_yellow.png'
       .comments_signal_red
         = image_tag 'signal_red.png'
     .card_signal
       .card_blue.hidden
         - @comments.each do |comment|
           - if comment.content.present?
-            = render 'commons/comment', comment: comment
-      .card_yellow.hidden
-        - @comments.each do |comment|
-          - if comment.content2.present?
             = render 'commons/comment', comment: comment
       .card_red.hidden
         - @comments.each do |comment|
@@ -40,15 +34,6 @@
         .comment_text_area1.hidden
           = text_area_tag :comment_content, '', class: 'sm'
           .comment_cancel1.batsu
-            - if current_user.profile&.theme == 'dark'
-              = image_tag 'w-cancel2.png'
-            - else
-              = image_tag 'cancel2.png'
-        .show_comment_form2.signal
-          = image_tag 'signal_yellow.png'
-        .comment_text_area2.hidden
-          = text_area_tag :comment_content2, '', class: 'sm'
-          .comment_cancel2.batsu
             - if current_user.profile&.theme == 'dark'
               = image_tag 'w-cancel2.png'
             - else
