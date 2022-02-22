@@ -5,7 +5,7 @@
   .comments_container
     .comments_signal
       .comments_chart
-        = pie_chart @data, legend: false, width: '32px', height: '32px', colors: ['#bee5eb','#F9D5A7','#e04e4e']
+        = pie_chart @data, legend: false, width: '32px', height: '32px', colors: ['#bee5eb','#e04e4e']
       .comments_signal_all
         %button.all_btn All
       .comments_signal_blue
@@ -33,20 +33,10 @@
           = image_tag 'signal_blue.png'
         .comment_text_area1.hidden
           = text_area_tag :comment_content, '', class: 'sm'
-          .comment_cancel1.batsu
-            - if current_user.profile&.theme == 'dark'
-              = image_tag 'w-cancel2.png'
-            - else
-              = image_tag 'cancel2.png'
         .show_comment_form3.signal
           = image_tag 'signal_red.png'
         .comment_text_area3.hidden
           = text_area_tag :comment_content3, '', class: 'sm'
-          .comment_cancel3.batsu
-            - if current_user.profile&.theme == 'dark'
-              = image_tag 'w-cancel2.png'
-            - else
-              = image_tag 'cancel2.png'
         .comment_btn
           - if current_user.profile&.theme == 'dark'
             = image_tag 'w-cancel.png', class: 'comment_cancel'

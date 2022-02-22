@@ -16,23 +16,13 @@ const handleCommentForm = () => {
   })
 
   $('.show_comment_form1').on('click', () => {
-    $('.show_comment_form1').addClass('hidden')
-    $('.comment_text_area1').removeClass('hidden')
-  })
-
-  $('.comment_cancel1').on('click', () => {
-    $('.comment_text_area1').addClass('hidden')
-    $('.show_comment_form1').removeClass('hidden')
+    $('.show_comment_form1, .comment_text_area3').addClass('hidden')
+    $('.show_comment_form3, .comment_text_area1').removeClass('hidden')
   })
 
   $('.show_comment_form3').on('click', () => {
-    $('.show_comment_form3').addClass('hidden')
-    $('.comment_text_area3').removeClass('hidden')
-  })
-
-  $('.comment_cancel3').on('click', () => {
-    $('.comment_text_area3').addClass('hidden')
-    $('.show_comment_form3').removeClass('hidden')
+    $('.show_comment_form3, .comment_text_area1').addClass('hidden')
+    $('.show_comment_form1, .comment_text_area3').removeClass('hidden')
   })
 }
 
@@ -91,6 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const content3 = $('#comment_content3').val()
     if (!content && !content3) {
       window.alert('コメントを入力してください')
+    } else if (content && content3){
+      window.alert('どちらか一つ')
     } else {
       axios.post(`/opinions/${opinionId}/comments`, {
         comment: { content: content, content3: content3 }
