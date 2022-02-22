@@ -12,9 +12,8 @@ class OpinionsController < ApplicationController
     @opinion = Opinion.find(params[:id])
     @comments = @opinion.comments
     @data1 = @comments.where.not(content: "").count
-    @data2 = @comments.where.not(content2: "").count
     @data3 = @comments.where.not(content3: "").count
-    @data = {'blue' => @data1, 'yellow' => @data2, 'red' => @data3}
+    @data = {'blue' => @data1, 'red' => @data3}
   end
 
   def new
