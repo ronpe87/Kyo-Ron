@@ -18,4 +18,7 @@
       %p= opinion.display_created_at
     .card_detail_delete
       - if user_signed_in? && current_user.has_written?(opinion)
-        = link_to image_tag('delete.png', class:'delete'), opinion_path(opinion), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+        - if current_user.profile&.theme != 'dark'
+          = link_to image_tag('delete.png', class:'delete'), opinion_path(opinion), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+        - else
+          = link_to image_tag('w-delete.png', class:'delete'), opinion_path(opinion), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }

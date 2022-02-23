@@ -1,12 +1,9 @@
 .card {
-  padding: 16px 16px 0px 16px;
-  margin-bottom: 24px;
-  background: #C0C0C0;
-  border-radius: 10px;
-  font-family: Avenir;
-  font-style: normal;
-  font-weight: normal;
-  height: 100%;
+  position: relative;
+  margin: 2em 0;
+  padding: 0.5em 1em;
+  border: solid 6px #C0C0C0;
+  border-radius: 8px;
 
   &_title {
     width: 100%;
@@ -24,9 +21,7 @@
     position: relative;
     font-size: 16px;
     line-height: 16px;
-    color: #000000;
     mix-blend-mode: normal;
-    opacity: 0.5;
     display: -webkit-box;
     -webkit-box-orient: vertical;
 
