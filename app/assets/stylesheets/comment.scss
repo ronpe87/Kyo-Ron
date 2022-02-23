@@ -27,13 +27,44 @@
 
 .comment_detail {
   position: relative;
+  margin: 2em 80px;
   padding: 8px;
-  background: #F4F4F4;
-  margin-bottom: 24px;
-  border-radius: 10px;
-  font-family: Avenir;
-  font-style: normal;
-  font-weight: normal;
+  border: solid 4px #bee5eb;
+  border-radius: 8px;
+}
+
+.comment_detail::before{
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  right: -15px;
+  top: 8px;
+  border-left: 15px solid #bee5eb;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+
+.comment_detail_red {
+  position: relative;
+  margin: 2em 80px;
+  padding: 8px;
+  border: solid 4px #e04e4e;
+  border-radius: 8px;
+}
+
+.comment_detail_red::before{
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  left: -15px;
+  top: 8px;
+  border-right: 15px solid #e04e4e;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
 }
 
 .comment_content {
@@ -42,8 +73,6 @@
   overflow: hidden;
 
   &_signal {
-    margin: 0px 8px;
-    padding: 0px 4px;
     border-radius: 4px;
     color: #000000DE;
   }
@@ -60,12 +89,6 @@
     }
   }
 
-  &_yellow {
-    img {
-      height: 32px;
-    }
-  }
-
   &_red {
     img {
       height: 32px;
@@ -73,49 +96,43 @@
   }
 }
 
-.blue {
-  background-color: #bee5eb;
-  margin-top: 8px;
-}
-
-.yellow {
-  background-color: #F9D5A7;
-}
-
-.red {
-  background-color: #e04e4e;
-}
-
 .comments_user {
-
+  position: absolute;
+  right: -80px;
+  top: 0;
   &_flex {
     display: flex;
-    justify-content: flex-end; //displayflexを寄せできる
+    align-items: flex-end;
   }
 
   &_avatar {
+    text-align: center;
     img {
       height: 32px;
       width: 32px;
     }
   }
+}
 
-  &_name {
-    right: 0px;
-    margin-top: 14px;
+.comments_user_red {
+  position: absolute;
+  left: -80px;
+  top: 0;
+  &_flex {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &_avatar {
+    text-align: center;
+    img {
+      height: 32px;
+      width: 32px;
+    }
   }
 }
 
 .signal {
-  width: 64px;
-  margin-left: auto;
-
-  img {
-    height: 40px;
-  }
-}
-
-.batsu {
   width: 64px;
   margin-left: auto;
 
