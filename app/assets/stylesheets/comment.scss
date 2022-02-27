@@ -140,3 +140,32 @@
     height: 40px;
   }
 }
+
+.comments_graf {
+  background-color: transparent;
+  height: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: row; /* 要素を横に並べる */
+  justify-content: space-evenly; /* 要素を均等間隔に分散させる */
+}
+
+.item {
+  box-sizing: border-box;
+  padding: 4px;
+}
+
+.item_label {
+  white-space: nowrap;
+}
+
+.item1 {
+  background-color: #bee5eb;
+  width: 25%;
+}
+
+.item3 {
+  background-color: #e04e4e;
+  width: 15%;
+}
+

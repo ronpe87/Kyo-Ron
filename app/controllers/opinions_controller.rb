@@ -11,8 +11,11 @@ class OpinionsController < ApplicationController
   def show
     @opinion = Opinion.find(params[:id])
     @comments = @opinion.comments
-    @data1 = @comments.where.not(content: "").count
-    @data3 = @comments.where.not(content3: "").count
+    @data1 = @comments.where.not(content: "").count('distinct user_id')
+    @data3 = @comments.where.not(content3: "").count('distinct user_id')
+    @all_data = @data1 + @data3
+    @graf1 = 100 * @data1 / @all_data
+    @graf3 = 100 * @data3 / @all_data
     @data = {'blue' => @data1, 'red' => @data3}
   end
 

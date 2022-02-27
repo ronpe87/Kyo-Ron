@@ -79,7 +79,7 @@ const appendNewComment = (comment) => {
 
   const theme_data = $('#theme_data').data()
   const theme = theme_data.userTheme
-  if (theme == 'dark'){
+  if (theme == 'dark') {
     $('img[src="/light-avatar.png"]').attr('src', '/dark-avatar.png')
     $('img[src="/delete2.png"]').attr('src', '/w-delete2.png')
     $('.comments_user_name, .comment_content_signal').css('color', 'white')
@@ -89,8 +89,9 @@ const appendNewComment = (comment) => {
 document.addEventListener('DOMContentLoaded', () => {
   const dataset = $('#opinion_show').data()
   const opinionId = dataset.opinionId
-  const commentdataset = $('#opinion_show').data()
-  const Current = $(commentdataset).attr('userId');
+  const graf1 = dataset.graf1
+  const graf3 = dataset.graf3
+  const Current = $(dataset).attr('userId');
 
   axios.get(`/opinions/${opinionId}/comments`)
     .then((response) => {
@@ -99,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
         appendNewComment(comment)
         $('[id*=' + Current + ']').removeClass('hidden')
       })
+      // $('.header').append(`<p>` + $(comments).length + `</p>`)
     })
 
   handleCommentForm()
@@ -140,4 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
   $('.comments_signal_all').on('click', () => {
     $('.comment_detail_red, .comment_detail').removeClass('hidden')
   })
+
+  $('.item1').css('width', graf1 + '%')
+  $('.item3').css('width', graf3 + '%')
 })
