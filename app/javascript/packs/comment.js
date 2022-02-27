@@ -89,9 +89,10 @@ const appendNewComment = (comment) => {
 document.addEventListener('DOMContentLoaded', () => {
   const dataset = $('#opinion_show').data()
   const opinionId = dataset.opinionId
+  const commentdataset = $('#opinion_show').data()
+  const Current = $(commentdataset).attr('userId');
   const graf1 = dataset.graf1
   const graf3 = dataset.graf3
-  const Current = $(dataset).attr('userId');
 
   axios.get(`/opinions/${opinionId}/comments`)
     .then((response) => {
