@@ -89,8 +89,7 @@ const appendNewComment = (comment) => {
 document.addEventListener('DOMContentLoaded', () => {
   const dataset = $('#opinion_show').data()
   const opinionId = dataset.opinionId
-  const commentdataset = $('#opinion_show').data()
-  const Current = $(commentdataset).attr('userId');
+  const Current = $(dataset).attr('userId');
   const graf1 = dataset.graf1
   const graf3 = dataset.graf3
 
@@ -101,7 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
         appendNewComment(comment)
         $('[id*=' + Current + ']').removeClass('hidden')
       })
-      // $('.header').append(`<p>` + $(comments).length + `</p>`)
     })
 
   handleCommentForm()

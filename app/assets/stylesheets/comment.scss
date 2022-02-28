@@ -148,24 +148,25 @@
   display: flex;
   flex-direction: row; /* 要素を横に並べる */
   justify-content: space-evenly; /* 要素を均等間隔に分散させる */
+  margin-bottom: 8px;
 }
 
 .item {
   box-sizing: border-box;
-  padding: 4px;
+  text-align: center;
+  padding-top: 10px;
 }
 
 .item_label {
   white-space: nowrap;
+  font-size: 16px;
 }
 
 .item1 {
   background-color: #bee5eb;
-  width: 25%;
 }
 
 .item3 {
   background-color: #e04e4e;
-  width: 15%;
 }
 
