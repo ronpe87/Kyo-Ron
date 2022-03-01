@@ -5,6 +5,13 @@ input, select {
     padding: 8px 0px;
     border: 2px solid #EBEBEB;
   }
+
+  &.sub_text{
+    width: 88%;
+    margin: 8px 0px;
+    padding: 8px 0px;
+    border: 2px solid #EBEBEB;
+  }
 }
 
 label {
@@ -35,4 +42,33 @@ textarea, trix-editor {
 .actions {
   margin: 16px 0px;
   text-align: center;
+}
+
+.two_opinion {
+  display: flex;
+  margin-top: 16px;
+}
+
+.red_opinion {
+  flex: 1;
+  img {
+    height: 32px;
+    margin-left: 8px;
+  }
+}
+
+.blue_opinion {
+  flex: 1;
+  img {
+    height: 32px;
+    margin-left: 8px;
+  }
+}
+
+.opinion_ex {
+  display: flex;
+  justify-content: flex-end;
+  &_text {
+    padding-top: 4px;
+  }
 }

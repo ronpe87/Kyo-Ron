@@ -4,9 +4,9 @@
   padding: 0.5em 1em;
   border: solid 6px #C0C0C0;
   border-radius: 8px;
+  width: 100%;
 
   &_title {
-    width: 100%;
     left: 16px;
     top: 24px;
     font-size: 24px;
@@ -16,7 +16,6 @@
   }
 
   &_content {
-    width: 100%;
     padding-top: 8px;
     position: relative;
     font-size: 16px;
@@ -24,8 +23,20 @@
     mix-blend-mode: normal;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-
     word-wrap: break-word; //改行
+
+    &_two {
+      display: flex;
+      justify-content: center;
+    }
+
+    &_red {
+      border: solid 4px #e04e4e;
+    }
+
+    &_blue {
+      border: solid 4px #bee5eb;
+    }
   }
 
   &_detail {
@@ -75,4 +86,13 @@
   height: 80px;
   overflow: hidden; //はみ出した部分を隠す
   -webkit-line-clamp: 3;
+}
+
+.redblue {
+  width: 48%;
+  margin: 8px;
+  padding: 0.5em 0.5em;
+  border-radius: 8px;
+  flex: 1;
+  text-align: center;
 }
