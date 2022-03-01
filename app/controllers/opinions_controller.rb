@@ -39,7 +39,7 @@ class OpinionsController < ApplicationController
 
   private
   def opinion_params
-    params.require(:opinion).permit(:title, :content)
+    params.require(:opinion).permit(:title, :content, :red_opinion, :blue_opinion)
   end
 
   def set_opinion

@@ -7,6 +7,11 @@
   - else
     .card_content
       = opinion.content
+      .card_content_two
+        .card_content_red.redblue
+          = opinion.red_opinion
+        .card_content_blue.redblue
+          = opinion.blue_opinion
   .card_detail
     .card_detail_author_image
       = link_to account_path(opinion.user) do

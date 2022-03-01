@@ -11,5 +11,20 @@
       = f.label :content, '内容', class: 'label'
     %div
       = f.rich_text_area :content, class: 'ric'
+    .two_opinion
+      .red_opinion
+        %div
+          = f.text_field :red_opinion, class: 'sub_text'
+        .opinion_ex
+          .opinion_ex_text
+            %p= 'という意見の人は'
+          = image_tag 'signal_red.png'
+      .blue_opinion
+        %div
+          = f.text_field :blue_opinion, class: 'sub_text'
+        .opinion_ex
+          .opinion_ex_text
+            %p= 'という意見の人は'
+          = image_tag 'signal_blue.png'
     .btn-submit
       = f.submit '保存', class: 'btn-primary'
