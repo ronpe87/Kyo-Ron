@@ -144,4 +144,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   $('.item1').css('width', graf1 + '%')
   $('.item3').css('width', graf3 + '%')
+
+  $(document).on('click', function (e) {
+    if (!$(e.target).closest('.sort_btn').length) {
+      $('.comments_signal').addClass('hidden')
+      // ターゲット要素の外側をクリックした時の操作
+    } else {
+      $('.comments_signal').removeClass('hidden')
+      // ターゲット要素をクリックした時の操作
+    }
+  });
 })
