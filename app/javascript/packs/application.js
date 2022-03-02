@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (theme == 'dark') {
     $('.header_title').children('a:link').css('color', 'white')
     $('label, .card_title, .card_detail, .trix-content, .card_content_two, .opinion_ex_text').css('color', 'white')
-    $('.dropdown, .profilePage_image, .card_detail_author_image2').children('img').attr('src', '/dark-avatar.png')
   } else {
     $('.label').css('color', 'black')
   }
