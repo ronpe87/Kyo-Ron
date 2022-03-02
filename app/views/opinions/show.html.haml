@@ -12,13 +12,15 @@
         %span.item_label
           = @data1
           = '人'
-    .comments_signal
-      .comments_signal_all
-        %button.all_btn All
-      .comments_signal_blue
-        = image_tag 'signal_blue.png'
-      .comments_signal_red
-        = image_tag 'signal_red.png'
+    .sort_dropdown
+      %button.sort_btn sort
+      .comments_signal.hidden
+        .comments_signal_all
+          = image_tag 'signal_all.png'
+        .comments_signal_red
+          = image_tag 'signal_red.png'
+        .comments_signal_blue
+          = image_tag 'signal_blue.png'
   - if user_signed_in? && !current_user.has_written?(@opinion)
     .comment_form
       .comment_btn.show_comment_form

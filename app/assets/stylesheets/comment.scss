@@ -80,8 +80,9 @@
 
 .comments_signal {
   display: flex;
-  justify-content: flex-end;
   margin-bottom: 8px;
+  position: absolute;
+  right: 0px;
 
   &_blue {
     img {
@@ -90,6 +91,12 @@
   }
 
   &_red {
+    img {
+      height: 32px;
+    }
+  }
+
+  &_all {
     img {
       height: 32px;
     }
@@ -174,3 +181,12 @@
   border-radius: 4px;
 }
 
+.sort_dropdown {
+  text-align: right;
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.sort_btn {
+  width: 40px;
+}
