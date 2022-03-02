@@ -55,6 +55,14 @@ class User < ApplicationRecord
     end
   end
 
+  def dark_avatar_image
+    if profile&.avatar&.attached?
+      profile.avatar
+    else
+      'dark-avatar.png'
+    end
+  end
+
   # 以下を追加
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
