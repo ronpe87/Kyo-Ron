@@ -22,17 +22,36 @@
   margin-bottom: 8px;
 }
 
-.video {
+.video_container {
   display: flex;
+  justify-content: center;
+}
+
+.video {
+  text-align: center;
+  background-color: #E3F6F5;
+  margin: 8px;
 }
 
 .video-coment {
   width: 360px;
-  margin-left: 40px;
+  margin: 16px;
   font-size: 16px;
+  text-align: left;
 }
 
 .info {
+  margin-top: 64px;
+  padding: 24px;
   font-size: 16px;
-  margin-bottom: 40px;
+  background-color: #E3F6F5;
+}
+
+.start {
+  text-align: center;
+}
+
+.start_btn {
+  display: flex;
+  justify-content: center;
 }

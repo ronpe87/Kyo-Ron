@@ -1,22 +1,30 @@
+.info
+  %p= '共論は議題に対する賛否を投票・議論するSNSです。'
+  %p= '・まず、議題を投稿します。議題にはタイトル、投稿をするに至った経緯などの詳細を入力し、〇〇派は赤、××派は青と組み分けをします。'
+  %p= '・それに対して他のユーザーは赤派なら赤コメントマークから青派なら青コメントマークからコメントを入力します。'
+  %p= '・コメントをすると同時に投票され、どっちの意見が何人かが分かります。単純に投票して終わりではなく、双方がなぜそう思うのかが第三者から見ても分かりやすいようになっています。'
 .container
-  .info
-    %p= '共論はある意見に対する賛否両論を募集するSNSです。'
-    %p= '投稿に対するコメントは「賛成」、「どちらとも言えない」、「反対」によって３色に色分けして投稿することができます。'
-    %p= '肯定的な意見や否定的な意見を視覚的にわかりやすく表示することで議論や提案がやりやすくなるのではないかと思い開発しました。'
-  .video
-    .color-change
+  .video_container
+    .video.color-change
+      %h2= 'ソート機能'
       = video_tag 'color-change.mp4', width: '360', autoplay: true, loop: true, muted: true, controls: true
-    .video-coment
-      %p= '・色付きの吹き出しマークをクリックすればその色のコメントのみ、表示することができます。'
-      %p= 'これによって肯定的なコメントのみ見ることや、否定的なコメントのみ見ることができます。'
-  .video
-    .dark-mode
+      .video-coment
+        %p= '・ソート機能によって、片方の意見のみ表示することができます。'
+    .video.dark-mode
+      %h2= 'ダークモード機能'
       = video_tag 'dark-mode.mp4', width: '360', autoplay: true, loop: true, muted: true, controls: true
-    .video-coment
-      %p= '・ユーザーマークの「プロフィール」から画面全体が黒いダークモードを選択することができます。'
-      %p= 'アカウントごとにモードが保存されるので次回ログインした時も選択したモードで始められます。'
-  .video
-    .mail-test
+      .video-coment
+        %p= '・ユーザーマークの「プロフィール」から背景が黒いダークモードを選択することができます。'
+        %p= 'アカウントごとにモードが保存されるので次回ログインした時も選択したモードで始められます。'
+    .video.mail-test
+      %h2= 'メール通知機能'
       = video_tag 'mail-test.mp4', width: '360', autoplay: true, loop: true, muted: true, controls: true
-    .video-coment
-      %p= '・新規のコメントがつくとそのその投稿主が登録したメールアドレスに新着コメント通知のメールが自動送信されます。'
+      .video-coment
+        %p= '・新規のコメントがつくとそのその投稿主が登録したメールアドレスに新着コメント通知のメールが自動送信されます。'
+  .start
+    %h2= 'さあ、はじめよう'
+    .start_btn
+      .login_btn
+        = link_to 'ログイン', new_user_session_path
+      .guest
+        = link_to 'ゲスト', users_guest_sign_in_path, method: :post
