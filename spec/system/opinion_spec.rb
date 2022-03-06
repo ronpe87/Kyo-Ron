@@ -5,7 +5,7 @@ RSpec.describe 'Opinion', type: :system do
   let!(:opinions) { create_list(:opinion, 3, user: user) }
 
   it '投稿一覧が表示される' do
-    visit root_path
+    visit opinions_path
     opinions.each do |opinion|
       expect(page).to have_css('.card_title', text: opinion.title)
     end
@@ -13,7 +13,7 @@ RSpec.describe 'Opinion', type: :system do
 
   it 'ログイン後、投稿詳細を表示できる' do
     sign_in user
-    visit root_path
+    visit opinions_path
 
     opinion = opinions.first
     click_on opinion.title

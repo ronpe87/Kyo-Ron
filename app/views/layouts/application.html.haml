@@ -13,7 +13,7 @@
     - if !current_page?(new_user_session_path) && !current_page?(new_user_registration_path)
       %header.header
         .header_title
-          = link_to '共論', root_path
+          = link_to '共論', opinions_path
         .header_right
           - if user_signed_in?
             #theme_data{data: {user_theme: current_user.profile&.theme}}
@@ -26,16 +26,11 @@
                 .dropdown_content.hidden
                   = link_to 'プロフィール', profile_path, class: 'log_out'
                   = link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete' }, class: 'log_out'
-          - else
-            .login_btn
-              = link_to 'ログイン', new_user_session_path
-            .guest
-              = link_to 'ゲスト', users_guest_sign_in_path, method: :post
     - if flash.present?
       .flash
         - flash.each do |key, value|
           %div{:class => key}= value
-    - if !current_page?(root_path)
+    - if !current_page?(opinions_path)
       .float_btn.back
         - if user_signed_in?
           - if current_user.profile&.theme == 'dark'

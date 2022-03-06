@@ -1,8 +1,10 @@
 .info
   %p= '共論は議題に対する賛否を投票・議論するSNSです。'
-  %p= '・まず、議題を投稿します。議題にはタイトル、投稿をするに至った経緯などの詳細を入力し、〇〇派は赤、××派は青と組み分けをします。'
-  %p= '・それに対して他のユーザーは赤派なら赤コメントマークから青派なら青コメントマークからコメントを入力します。'
-  %p= '・コメントをすると同時に投票され、どっちの意見が何人かが分かります。単純に投票して終わりではなく、双方がなぜそう思うのかが第三者から見ても分かりやすいようになっています。'
+  %p= '・議題の投稿'
+  %p= '議題にはタイトル、投稿をするに至った経緯などの詳細を入力し、〇〇派は赤、××派は青と組み分けをします。'
+  %p= '・投票とコメント'
+  %p= '投稿された議題に対して他のユーザーは赤派なら赤コメントマークから青派なら青コメントマークからコメントを入力します。'
+  %p= 'コメントをすると同時に投票され、どっちの意見が何人かが分かります。単純に投票して終わりではなく、双方がなぜそう思うのかが第三者から見ても分かりやすいようになっています。'
 .container
   .video_container
     .video.color-change
@@ -21,10 +23,13 @@
       = video_tag 'mail-test.mp4', width: '360', autoplay: true, loop: true, muted: true, controls: true
       .video-coment
         %p= '・新規のコメントがつくとそのその投稿主が登録したメールアドレスに新着コメント通知のメールが自動送信されます。'
-  .start
-    %h2= 'さあ、はじめよう'
-    .start_btn
-      .login_btn
-        = link_to 'ログイン', new_user_session_path
-      .guest
-        = link_to 'ゲスト', users_guest_sign_in_path, method: :post
+  - if user_signed_in?
+    %p= 'aa'
+  - else
+    .start
+      %h2= 'さあ、はじめよう'
+      .start_btn
+        .login_btn.sign_btn
+          = link_to 'ログイン', new_user_session_path
+        .guest.sign_btn
+          = link_to 'ゲスト', users_guest_sign_in_path, method: :post

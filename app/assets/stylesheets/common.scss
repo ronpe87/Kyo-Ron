@@ -55,3 +55,22 @@
   display: flex;
   justify-content: center;
 }
+
+.login_btn {
+  margin-right: 16px;
+  background-color: #E3F6F5;
+}
+
+.guest {
+  background-color: #FFFF99;
+}
+
+.sign_btn {
+  padding-top: 5px;
+  height: 40px;
+  width: 96px;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid ;
+  border-radius: 8px;
+}

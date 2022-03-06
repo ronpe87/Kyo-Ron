@@ -1,5 +1,5 @@
 .container
-  - if current_page?(root_path)
+  - if current_page?(opinions_path)
     .search
       = search_form_for @q do |f|
         = f.label :title, "キーワード検索"
@@ -8,7 +8,7 @@
   - @opinions.each do |opinion|
     = link_to opinion_path(opinion) do
       = render 'commons/opinion', opinion: opinion
-  - if current_page?(root_path)
+  - if current_page?(opinions_path)
     .pagenate
       = paginate @opinions
   - if user_signed_in?
