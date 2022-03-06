@@ -6,7 +6,11 @@ class UserSerializer < ActiveModel::Serializer
   has_one :profile
 
   def name
-    object.username
+    if object.username == false || object.username == 'ゲスト'
+      'ゲスト'
+    else
+      object.username
+    end
   end
 
   def avatar_comment_image
