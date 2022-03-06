@@ -6,7 +6,7 @@ class UserSerializer < ActiveModel::Serializer
   has_one :profile
 
   def name
-    if object.username == false || object.username == 'ゲスト'
+    if object.username == false || object.username == 'ゲスト' || object.username == 'null'
       'ゲスト'
     else
       object.username
