@@ -1,9 +1,13 @@
 class UserSerializer < ActiveModel::Serializer
   include Rails.application.routes.url_helpers
 
-  attributes :id, :username, :avatar_comment_image
+  attributes :id, :username, :avatar_comment_image, :name
   has_many :comments
   has_one :profile
+
+  def name
+    object.username
+  end
 
   def avatar_comment_image
     if object.avatar_image != 'light-avatar.png'
