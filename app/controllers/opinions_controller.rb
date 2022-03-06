@@ -25,7 +25,7 @@ class OpinionsController < ApplicationController
   def create
     @opinion = current_user.opinions.build(opinion_params)
     if @opinion.save
-      redirect_to root_path(@opinion), notice: '保存できました'
+      redirect_to opinions_path(@opinion), notice: '保存できました'
     else
       render :new
     end
@@ -34,7 +34,7 @@ class OpinionsController < ApplicationController
   def destroy
     opinion = current_user.opinions.find(params[:id])
     opinion.destroy!
-    redirect_to root_path, notice: '削除に成功しました'
+    redirect_to opinions_path, notice: '削除に成功しました'
   end
 
   private

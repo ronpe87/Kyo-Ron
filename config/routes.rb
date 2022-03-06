@@ -9,8 +9,8 @@ Rails.application.routes.draw do
     passwords: 'users/passwords'
   }
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root to: "opinions#index"
-  # resource :home, only: [:show]
+  root to: "homes#show"
+  resource :home, only: [:show]
   resource :timeline, only: [:show]
 
   resources :opinions do
