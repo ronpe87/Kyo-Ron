@@ -6,9 +6,12 @@
       - else
         = image_tag user.dark_avatar_image, class: 'icon'
     .profilePage_name
-      = user.username
+      - if user.username.present?
+        = user.username
+      - else
+        = 'ゲスト'
     .profilePage_bio
-      = user.profile&.bio
+      %p= user.profile&.bio
     .profilePage_count_container
       .profilePage_count_opinions
         .profilePage_count_opinions_title
